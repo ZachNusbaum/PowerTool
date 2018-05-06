@@ -24,6 +24,10 @@ gem "uglifier"
 
 # Tools
 gem "awesome_print"
+gem "rotp"
+gem "active_interaction", "~> 3.6.1"
+gem "devise", "~> 4.4.3"
+gem "money-rails"
 
 # Env specific dependencies...
 
