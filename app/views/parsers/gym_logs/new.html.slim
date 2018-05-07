@@ -1,0 +1,20 @@
+= form_with model: @parser, local: true, method: :post do |f|
+  .form-group
+    = f.label :raw_log
+    = f.text_area :raw_log, class: 'form-control'
+  = f.submit 'Parse', class: 'btn btn-primary'
+
+  - if @parser.valid?
+    hr
+    table.table.table-sm.table-bordered.table-hover
+      thead
+        tr
+          th Date
+          th Time
+          th Location
+      tbody
+        - @parser.result.each do |match|
+          tr
+            td #{match[0]}/#{match[1]}/#{match[2]}
+            td = match[3]
+            td = match[7]
