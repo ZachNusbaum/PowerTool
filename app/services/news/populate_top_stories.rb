@@ -20,11 +20,14 @@ class News::PopulateTopStories < ActiveInteraction::Base
   end
 
   def result
-    connection.get('5af06d403100002c0096c63a')
+    connection.get('top-headlines') do |req|
+      req.headers['X-Api-Key'] = Rails.application.credentials.news_api_key
+      req.params['country'] = 'us'
+    end
   end
 
   def connection
-    Faraday.new 'http://www.mocky.io/v2' do |conn|
+    Faraday.new 'https://newsapi.org/v2' do |conn|
       conn.response :json, :content_type => /\bjson$/
       conn.adapter Faraday.default_adapter
     end

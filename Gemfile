@@ -66,3 +66,6 @@ group :test do
   gem "capybara-selenium"
   gem "simplecov"
 end
+
+gem "sidekiq"
+gem "sidekiq-scheduler"

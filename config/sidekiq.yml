@@ -1,0 +1,11 @@
+---
+:queues:
+  - default
+  - mailers
+:schedule:
+  GetTopStories:
+    every: '1h'
+    class: GetTopStoriesJob
+    queue: default
+    description: 'Get the latest top stories'
+
