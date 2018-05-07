@@ -12,6 +12,8 @@ gem "rack-canonical-host"
 gem "rails", "~> 5.2.0"
 gem "pry-rails"
 gem "chronic"
+gem "faraday"
+gem "faraday_middleware"
 
 # Front-endy
 gem "autoprefixer-rails"
