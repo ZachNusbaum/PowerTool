@@ -3,7 +3,17 @@ class Parsers::GymLog < ActiveInteraction::Base
   string :raw_log
 
   def execute
-    get_matches
+    result = []
+    get_matches.each do |match|
+
+      data = {
+          time: Chronic.parse("#{match[0]}/#{match[1]}/#{match[2]} #{match[4]}:#{match[5]} #{match[6]}"),
+          location: match[7]
+      }
+      result << data
+    end
+
+    result
   end
 
   private

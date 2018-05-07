@@ -18,6 +18,10 @@ p Copy and paste the HTML table from the LA Fitness website into the box below.
       tbody
         - @parser.result.each do |match|
           tr
+            td = match[:time].strftime('%Y - %b %d')
+            td = match[:time].strftime('%I:%M %p')
+            td = match[:location]
+          /tr
             td #{match[0]}/#{match[1]}/#{match[2]}
             td = match[3]
             td = match[7]
