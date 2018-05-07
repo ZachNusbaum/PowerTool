@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :news do
+    resources :top_stories, only: [:index]
+  end
   namespace :parsers do
     resources :gym_logs, only: [:new, :create]
   end
