@@ -14,5 +14,5 @@ table.table.table-hover.table-striped.table-bordered
         td = story.published_at.strftime('%b %d, %Y %I:%M %p')
         td = link_to story.title, news_top_story_path(story)
         td = story.author
-        td = story.source_id
+        td = story.source ? story.source.name : 'n/a'
         td = link_to 'Read more', story.story_url

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   namespace :news do
     resources :top_stories, only: [:index, :show]
   end

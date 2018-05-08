@@ -69,3 +69,4 @@ end
 
 gem "sidekiq"
 gem "sidekiq-scheduler"
+gem "activeadmin"

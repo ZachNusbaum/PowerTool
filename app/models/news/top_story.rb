@@ -25,4 +25,9 @@ class News::TopStory < ApplicationRecord
   def to_param
     self.token
   end
+
+  def source
+    return false if self.source_id.blank?
+    News::Source.find_by_source_id(self.source_id)
+  end
 end
