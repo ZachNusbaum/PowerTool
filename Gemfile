@@ -40,9 +40,12 @@ end
 
 group :development, :test do
   gem "factory_bot_rails"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "rspec-rails"
   gem "rspec_junit_formatter"
   gem "rubocop", require: false
+  gem "letter_opener"
 end
 
 group :development do
@@ -70,3 +73,6 @@ end
 gem "sidekiq"
 gem "sidekiq-scheduler"
 gem "activeadmin"
+
+gem "omniauth"
+gem "omniauth-github"

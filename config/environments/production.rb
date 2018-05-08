@@ -1,5 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.credentials.smtp_server,
+    port:                 587,
+    user_name:            Rails.application.credentials.smtp_user,
+    password:             Rails.application.credentials.smtp_password,
+    authentication:       'plain',
+    enable_starttls_auto: true }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
