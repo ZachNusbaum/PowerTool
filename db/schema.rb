@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_153540) do
+ActiveRecord::Schema.define(version: 2018_05_08_022158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "news_sources", force: :cascade do |t|
+    t.string "source_id"
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "category"
+    t.string "language"
+    t.string "country"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["source_id"], name: "index_news_sources_on_source_id", unique: true
+    t.index ["token"], name: "index_news_sources_on_token", unique: true
+  end
 
   create_table "news_top_stories", force: :cascade do |t|
     t.string "token"
