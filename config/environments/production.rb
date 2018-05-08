@@ -8,6 +8,7 @@ Rails.application.configure do
     password:             Rails.application.credentials.smtp_password,
     authentication:       'plain',
     enable_starttls_auto: true }
+  config.action_mailer.default_url_options = { host: 'ptools.zachapps.com', ssl: true }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

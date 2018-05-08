@@ -37,6 +37,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github]
   enum role: [:basic, :admin]
 
+  has_many :messages, class_name: "Ahoy::Message", as: :user
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.email = auth.info.email

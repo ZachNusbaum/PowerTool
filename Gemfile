@@ -41,7 +41,6 @@ end
 group :development, :test do
   gem "factory_bot_rails"
   gem "better_errors"
-  gem "binding_of_caller"
   gem "rspec-rails"
   gem "rspec_junit_formatter"
   gem "rubocop", require: false
@@ -76,3 +75,4 @@ gem "activeadmin"
 
 gem "omniauth"
 gem "omniauth-github"
+gem "ahoy_email"

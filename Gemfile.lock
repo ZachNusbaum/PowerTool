@@ -58,6 +58,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ahoy_email (0.5.2)
+      actionmailer
+      activerecord
+      addressable (>= 2.3.2)
+      nokogiri
+      railties
+      safely_block (>= 0.1.1)
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
@@ -118,6 +125,7 @@ GEM
     dotenv-rails (2.2.2)
       dotenv (= 2.2.2)
       railties (>= 3.2, < 6.0)
+    errbase (0.1.0)
     erubi (1.7.1)
     et-orbi (1.1.1)
       tzinfo
@@ -309,6 +317,8 @@ GEM
     rubyzip (1.2.1)
     rufus-scheduler (3.4.2)
       et-orbi (~> 1.0)
+    safely_block (0.2.1)
+      errbase
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -385,6 +395,7 @@ PLATFORMS
 DEPENDENCIES
   active_interaction (~> 3.6.1)
   activeadmin
+  ahoy_email
   annotate
   autoprefixer-rails
   awesome_print

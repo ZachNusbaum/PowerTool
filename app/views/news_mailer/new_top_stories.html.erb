@@ -366,7 +366,7 @@
                                                     <![endif]-->
                                                     <div style="line-height:150%;color:#71777D;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 30px;">
                                                       <div style="font-size:12px;line-height:18px;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;color:#71777D;text-align:left;">
-                                                        <p style="margin: 0;font-size: 14px;line-height: 21px"><span style="color: rgb(0, 0, 0); font-size: 14px; line-height: 21px;"><strong>Hi <%= @recipient %></strong></span>,</p>
+                                                        <p style="margin: 0;font-size: 14px;line-height: 21px"><span style="color: rgb(0, 0, 0); font-size: 14px; line-height: 21px;"><strong>Hi <%= @recipient.email %></strong></span>,</p>
                                                         <p style="margin: 0;font-size: 14px;line-height: 21px"><u><%= pluralize(@stories.count, 'new story') %> have been published in the last 24 hours.</u></p>
                                                         <ul>
                                                           <% @stories.each do |story| %>
