@@ -8,4 +8,9 @@
     class: GetTopStoriesJob
     queue: default
     description: 'Get the latest top stories'
+  SendDailyStoryEmail:
+    every: '1d'
+    class: News::SendDailySummaryJob
+    queue: default
+    description: 'Send an email each day with the newest top stories'
 

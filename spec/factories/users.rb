@@ -16,6 +16,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  role                   :integer          default("basic"), not null
+#  send_daily_stories     :boolean          default(FALSE), not null
 #  sign_in_count          :integer          default(0), not null
 #  uid                    :string
 #  updated_at             :datetime         not null
