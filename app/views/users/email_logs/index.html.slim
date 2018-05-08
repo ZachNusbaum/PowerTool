@@ -1,0 +1,19 @@
+h1 Email History
+hr
+.alert.alert-warning This is a list of emails that PowerTools has sent to your account. If the email is listed below and you did not receive it, then the problem is on your end.
+table.table.table-bordered.table-striped.table-hover
+  thead
+    tr
+      th To
+      th Mailer
+      th Subject
+      th Sent at
+      th Opened at
+  tbody
+    - @messages.each do |message|
+      tr
+        td = message.to
+        td = message.mailer.split('#').map(&:titleize).join(' -> ')
+        td = message.subject
+        td = message.sent_at.strftime('%Y-%b-%d %l:%M %p')
+        td = message.opened_at.strftime('%Y-%b-%d %l:%M %p')

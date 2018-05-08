@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   namespace :parsers do
     resources :gym_logs, only: [:new, :create]
   end
+  namespace :users do
+    resources :email_logs, only: [:index]
+  end
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
