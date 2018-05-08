@@ -15,5 +15,5 @@ table.table.table-bordered.table-striped.table-hover
         td = message.to
         td = message.mailer.split('#').map(&:titleize).join(' -> ')
         td = message.subject
-        td = message.sent_at.strftime('%Y-%b-%d %l:%M %p')
-        td = message.opened_at.strftime('%Y-%b-%d %l:%M %p')
+        td = message.sent_at.try(:strftime, '%Y-%b-%d %l:%M %p')
+        td = message.opened_at.try(:strftime, '%Y-%b-%d %l:%M %p')
