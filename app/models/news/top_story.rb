@@ -21,4 +21,8 @@
 
 class News::TopStory < ApplicationRecord
   has_secure_token
+
+  def to_param
+    self.token
+  end
 end

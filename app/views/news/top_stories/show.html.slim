@@ -1,0 +1,13 @@
+h1 Story Detail
+hr
+.panel.panel-default
+  .panel-heading 
+    h4 = @story.title
+  .panel-body
+    .row
+      .col-md-4
+        = image_tag @story.image_url, class: 'img-responsive'
+      .col-md-8
+        p.lead = @story.description
+  .panel-footer.text-center Published #{@story.published_at.strftime('%b %d, %Y at %I:%M %p')}
+= link_to 'All Stories', news_top_stories_path, class: 'btn btn-default'

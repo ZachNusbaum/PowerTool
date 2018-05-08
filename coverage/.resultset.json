@@ -1,0 +1,107 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/zachnusbaum/Ruby/PowerTools/app/helpers/application_helper.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/jobs/get_top_stories_job.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/models/news.rb": [
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/zachnusbaum/Ruby/PowerTools/app/models/news/top_story.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1525735951
+  }
+}
