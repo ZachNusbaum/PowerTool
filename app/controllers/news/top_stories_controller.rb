@@ -7,4 +7,9 @@ class News::TopStoriesController < ApplicationController
   def show
     @story = News::TopStory.find_by_token params[:id]
   end
+
+  def email_opt_in_toggle
+    current_user.update(send_daily_stories: !current_user.send_daily_stories)
+    redirect_to news_top_stories_url
+  end
 end

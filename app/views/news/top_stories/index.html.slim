@@ -1,4 +1,10 @@
 h1 Top Stories
+p.small Powered by NewsApi.org
+- unless current_user.send_daily_stories
+  = link_to 'Get Daily Digest Email', news_email_toggle_path, method: :patch
+- else
+  = link_to 'Cancel Daily Digest Email', news_email_toggle_path, method: :patch
+
 hr
 table.table.table-hover.table-striped.table-bordered
   thead
