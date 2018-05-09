@@ -38,6 +38,7 @@ class User < ApplicationRecord
   enum role: [:basic, :admin]
 
   has_many :messages, class_name: "Ahoy::Message", as: :user
+  has_many :events, class_name: "Ahoy::Event"
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|

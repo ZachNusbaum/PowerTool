@@ -6,6 +6,7 @@ class Parsers::GymLogsController < ApplicationController
 
   def create
     @parser = Parsers::GymLog.run(log_params)
+    ahoy.track 'Parsed gym log', member_id: current_user.member_id
     render :new
   end
 

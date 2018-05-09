@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   namespace :users do
     resources :email_logs, only: [:index]
+    resources :events, only: [:index]
   end
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
