@@ -2,6 +2,7 @@
 :queues:
   - default
   - mailers
+  - ahoy
 :schedule:
   GetTopStories:
     cron: '0 * * * *'
