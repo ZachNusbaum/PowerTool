@@ -45,7 +45,7 @@ class User < ApplicationRecord
 
 
   def self.create_with_omniauth(auth)
-    find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
+    user = find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
       user.email = auth.info.email
       user.provider = auth['provider']
       user.uid = auth['uid']
@@ -53,6 +53,9 @@ class User < ApplicationRecord
       if auth['info']
          #user.name = auth['info']['name'] || ""
       end
+    end
+    if !user.persisted? && user.save!
+      UsersMailer.new_registration(user).deliver_later
     end
   end
 
