@@ -435,6 +435,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   jquery-rails
+  jwt
   launchy
   letter_opener
   listen

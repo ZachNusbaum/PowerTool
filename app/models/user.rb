@@ -66,6 +66,10 @@ class User < ApplicationRecord
     end
   end
 
+  def login_token(expires_at = (Time.zone.now + 1.day).to_datetime)
+    Tokens::AutoLogin.run!(user: self, expires_at: expires_at)
+  end
+
   private
 
   def send_email

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :email_logs, only: [:index]
     resources :events, only: [:index]
   end
+  scope :auth do
+    get '/', to: 'users/automatic_logins#new', as: 'auto_login'
+  end
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
