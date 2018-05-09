@@ -30,6 +30,7 @@
 
 class User < ApplicationRecord
   before_create :set_member_id
+  after_create :send_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -45,7 +46,7 @@ class User < ApplicationRecord
 
 
   def self.create_with_omniauth(auth)
-    user = find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
+    @user = find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
       user.email = auth.info.email
       user.provider = auth['provider']
       user.uid = auth['uid']
@@ -53,9 +54,6 @@ class User < ApplicationRecord
       if auth['info']
          #user.name = auth['info']['name'] || ""
       end
-    end
-    if !user.persisted? && user.save!
-      UsersMailer.new_registration(user).deliver_later
     end
   end
 
@@ -69,6 +67,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def send_email
+    UsersMailer.new_registration(self).deliver_later!
+  end
 
   def set_member_id
     self.member_id = loop do
