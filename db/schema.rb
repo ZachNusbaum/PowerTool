@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_235730) do
+ActiveRecord::Schema.define(version: 2018_05_09_010712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,20 @@ ActiveRecord::Schema.define(version: 2018_05_08_235730) do
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
   end
 
+  create_table "charges_money_requests", force: :cascade do |t|
+    t.string "token", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.boolean "paid", default: false, null: false
+    t.bigint "user_id"
+    t.text "description"
+    t.string "stripe_charge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stripe_charge_id"], name: "index_charges_money_requests_on_stripe_charge_id", unique: true
+    t.index ["token"], name: "index_charges_money_requests_on_token", unique: true
+    t.index ["user_id"], name: "index_charges_money_requests_on_user_id"
+  end
+
   create_table "news_sources", force: :cascade do |t|
     t.string "source_id"
     t.string "name"
@@ -133,4 +147,5 @@ ActiveRecord::Schema.define(version: 2018_05_08_235730) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "charges_money_requests", "users"
 end

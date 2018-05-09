@@ -1,0 +1,15 @@
+h1 Money Request
+hr
+p.lead #{@money_request.user.email} has requested a payment.
+- unless @money_request.paid?
+  = form_tag charges_money_request_payments_path(@money_request) do
+    |
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-name="ZDN Enterprises"
+                data-key="pk_test_9mJsXWuddnJQpwdkfuSsNkxc"
+                data-description="#{@money_request.description}"
+                data-amount="#{@money_request.amount_cents}"
+                data-locale="auto"
+                data-billing-address="true"></script>
+- else
+  h4 PAID!

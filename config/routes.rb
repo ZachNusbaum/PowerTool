@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
+  namespace :charges do
+    resources :money_requests, only: [:new, :create, :show] do
+      resources :payments, only: [:create]
+    end
+  end
   namespace :news do
     resources :top_stories, only: [:index, :show]
   end

@@ -1,0 +1,4 @@
+= simple_form_for @money_request, url: charges_money_requests_path do |f|
+  = f.input :amount
+  = f.input :description
+  =f.submit 'Create Request', class: 'btn btn-primary'
