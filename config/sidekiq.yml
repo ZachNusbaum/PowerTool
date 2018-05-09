@@ -2,6 +2,7 @@
 :queues:
   - default
   - mailers
+  - ahoy
 :schedule:
   GetTopStories:
     every: '1h'
