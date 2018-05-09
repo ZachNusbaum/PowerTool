@@ -46,7 +46,7 @@ class User < ApplicationRecord
 
 
   def self.create_with_omniauth(auth)
-    @user = find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
+    find_or_initialize_by(provider: auth['provider'], uid: auth['uid']) do |user|
       user.email = auth.info.email
       user.provider = auth['provider']
       user.uid = auth['uid']
@@ -54,7 +54,7 @@ class User < ApplicationRecord
       if auth['info']
          #user.name = auth['info']['name'] || ""
       end
-    end
+    end.save
   end
 
   def self.new_with_session(params, session)
