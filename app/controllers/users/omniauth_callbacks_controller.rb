@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def github
     @user = User.create_with_omniauth(request.env['omniauth.auth'])
-    if @user.persisted?
+    if @user
       ahoy.track "Authenticated with github", uid: @user.uid
       sign_in_and_redirect @user, event: :authentication
     else
