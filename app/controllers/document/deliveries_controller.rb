@@ -1,8 +1,9 @@
 class Document::DeliveriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_delivery, only: [:show]
+  before_action :expired, only: [:show]
 
   def show
-    @delivery = Document::Delivery.find params[:id]
   end
   
   def new
@@ -13,6 +14,7 @@ class Document::DeliveriesController < ApplicationController
     @delivery = Document::Delivery.new(delivery_params)
     @delivery.user = current_user
     if @delivery.save!
+      Document::DeliveryMailer.notification(@delivery).deliver_later! unless @delivery.recipient_email.blank?
       redirect_to document_delivery_path(@delivery)
     else
       render :new
@@ -23,5 +25,15 @@ class Document::DeliveriesController < ApplicationController
 
   def delivery_params
     params.require(:document_delivery).permit(:description, :file, :expires_at, :recipient_email)
+  end
+
+  def set_delivery
+    @delivery = Document::Delivery.find params[:id]
+  end
+
+  def expired
+    if @delivery.expires_at < DateTime.now
+      render plain: 'Sorry, this download has expired.'
+    end
   end
 end

@@ -25,4 +25,6 @@ class Document::Delivery < ApplicationRecord
   belongs_to :user
   has_secure_token
   has_one_attached :file
+
+  attribute :expires_at, :datetime, default: 1.week.from_now
 end
