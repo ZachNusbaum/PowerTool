@@ -82,6 +82,6 @@ gem "smartystreets_ruby_sdk"
 gem "jwt"
 gem "premailer-rails"
 gem "receipts"
-gem 'gdpr_rails'
+#gem 'gdpr_rails'
 gem "aws-sdk-s3", require: false
 gem "mini_magick"

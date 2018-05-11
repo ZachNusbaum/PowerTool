@@ -2,7 +2,7 @@ require_relative "boot"
 
 require "rails/all"
 
-require "policy_manager"
+#require "policy_manager"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

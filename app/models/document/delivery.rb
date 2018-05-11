@@ -2,13 +2,14 @@
 #
 # Table name: document_deliveries
 #
-#  created_at  :datetime         not null
-#  description :text
-#  expires_at  :datetime
-#  id          :bigint(8)        not null, primary key
-#  token       :string
-#  updated_at  :datetime         not null
-#  user_id     :bigint(8)
+#  created_at      :datetime         not null
+#  description     :text
+#  expires_at      :datetime
+#  id              :bigint(8)        not null, primary key
+#  recipient_email :string
+#  token           :string
+#  updated_at      :datetime         not null
+#  user_id         :bigint(8)
 #
 # Indexes
 #

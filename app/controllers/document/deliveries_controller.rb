@@ -22,6 +22,6 @@ class Document::DeliveriesController < ApplicationController
   private
 
   def delivery_params
-    params.require(:document_delivery).permit(:description, :file, :expires_at)
+    params.require(:document_delivery).permit(:description, :file, :expires_at, :recipient_email)
   end
 end

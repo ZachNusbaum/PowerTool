@@ -1,6 +1,7 @@
 h1 New File Delivery
 hr
 = simple_form_for @delivery, multipart: true do |f|
+  = f.input :recipient_email
   = f.input :description
   = f.input :expires_at, ampm: true, default: DateTime.now
   = f.input :file
