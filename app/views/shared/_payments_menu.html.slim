@@ -1,0 +1,7 @@
+- if current_user.try(:admin?)
+  ul.nav.navbar-nav
+    li.dropdown
+      a.dropdown-toggle href='#' data-toggle='dropdown'
+        | Payments
+      ul.dropdown-menu
+        li= link_to 'New Money Request', new_charges_money_request_path
