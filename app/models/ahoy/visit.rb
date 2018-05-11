@@ -6,7 +6,7 @@
 #  city             :string
 #  country          :string
 #  device_type      :string
-#  id               :integer          not null, primary key
+#  id               :bigint(8)        not null, primary key
 #  ip               :string
 #  landing_page     :text
 #  os               :string
@@ -16,7 +16,7 @@
 #  search_keyword   :string
 #  started_at       :datetime
 #  user_agent       :text
-#  user_id          :integer
+#  user_id          :bigint(8)
 #  utm_campaign     :string
 #  utm_content      :string
 #  utm_medium       :string

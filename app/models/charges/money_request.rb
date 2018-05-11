@@ -5,12 +5,12 @@
 #  amount_cents     :integer          default(0), not null
 #  created_at       :datetime         not null
 #  description      :text
-#  id               :integer          not null, primary key
+#  id               :bigint(8)        not null, primary key
 #  paid             :boolean          default(FALSE), not null
 #  stripe_charge_id :string
 #  token            :string           not null
 #  updated_at       :datetime         not null
-#  user_id          :integer
+#  user_id          :bigint(8)
 #
 # Indexes
 #
