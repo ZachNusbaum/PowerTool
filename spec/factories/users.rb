@@ -11,6 +11,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  member_id              :string
+#  name                   :string
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime

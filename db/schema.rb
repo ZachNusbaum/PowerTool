@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_11_211031) do
+ActiveRecord::Schema.define(version: 2018_05_11_222227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,17 @@ ActiveRecord::Schema.define(version: 2018_05_11_211031) do
     t.index ["user_id"], name: "index_charges_money_requests_on_user_id"
   end
 
+  create_table "document_deliveries", force: :cascade do |t|
+    t.string "token"
+    t.text "description"
+    t.datetime "expires_at"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_document_deliveries_on_token", unique: true
+    t.index ["user_id"], name: "index_document_deliveries_on_user_id"
+  end
+
   create_table "news_sources", force: :cascade do |t|
     t.string "source_id"
     t.string "name"
@@ -198,10 +209,12 @@ ActiveRecord::Schema.define(version: 2018_05_11_211031) do
     t.string "uid"
     t.string "member_id"
     t.boolean "send_daily_stories", default: false, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["member_id"], name: "index_users_on_member_id", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "charges_money_requests", "users"
+  add_foreign_key "document_deliveries", "users"
 end

@@ -11,6 +11,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  member_id              :string
+#  name                   :string
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -42,6 +43,7 @@ class User < ApplicationRecord
   has_many :messages, class_name: "Ahoy::Message", as: :user
   has_many :events, class_name: "Ahoy::Event"
   has_many :visits, class_name: "Ahoy::Visit"
+  has_many :document_deliveries, class_name: "Document::Delivery"
 
   validates :email, uniqueness: true
 

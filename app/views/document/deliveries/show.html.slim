@@ -1,0 +1,13 @@
+h1 Document Delivery
+hr
+.panel.panel-default
+  .panel-heading Document Delivery
+  .panel-body
+    .row
+      .col-md-4
+        - if @delivery.file.previewable?
+          = image_tag @delivery.file.preview(resize: "250")
+        br
+        = link_to 'Download', url_for(@delivery.file), class: 'btn btn-primary'
+      .col-md-8
+        p.lead = @delivery.description

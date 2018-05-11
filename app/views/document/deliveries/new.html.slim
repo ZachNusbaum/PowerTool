@@ -1,0 +1,6 @@
+= simple_form_for @delivery, multipart: true do |f|
+  = f.input :description
+  = f.input :expires_at, ampm: true, default: DateTime.now
+  = f.input :file
+
+  = f.submit "Deliver File"

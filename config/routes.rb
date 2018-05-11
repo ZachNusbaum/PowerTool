@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       resources :payments, only: [:create]
     end
   end
+  namespace :document do
+    resources :deliveries, only: [:new, :create, :show]
+  end
   namespace :news do
     patch 'email_toggle', to: 'top_stories#email_opt_in_toggle'
     resources :top_stories, only: [:index, :show]
