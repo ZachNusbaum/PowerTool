@@ -18,6 +18,7 @@ class Charges::PaymentsController < ApplicationController
     )
 
     @money_request.update(stripe_charge_id: charge.id, paid: true)
+    Charges::MoneyRequestMailer.receipt(@money_request, params[:stripeEmail]).deliver_later!
     redirect_to charges_money_request_path(@money_request)
   rescue Stripe::CardError => e
     flash[:error] = e.message

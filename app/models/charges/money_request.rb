@@ -28,4 +28,22 @@ class Charges::MoneyRequest < ApplicationRecord
   has_secure_token
 
   monetize :amount_cents
+
+  def receipt
+    Receipts::Receipt.new(
+      id: token,
+      product: 'MoneyRequest',
+      company: {
+        name: 'ZDN Enterprises - PowerTools',
+        address: 'San Diego, California',
+        email: 'receipts@zdnenterprises.com'
+      },
+      line_items: [
+        ["Date", created_at.to_s],
+        ["Description", description],
+        ["Charge ID", stripe_charge_id],
+        ["Amount", amount.format]
+      ]
+    )
+  end
 end

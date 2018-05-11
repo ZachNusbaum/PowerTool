@@ -1,4 +1,5 @@
 class UsersMailer < ApplicationMailer
+  layout false
   def new_registration(user)
     @user = user
 
