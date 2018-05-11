@@ -29,6 +29,7 @@
 #
 
 class User < ApplicationRecord
+  include PolicyManager::Concerns::UserBehavior
   before_create :set_member_id
   # after_create :send_email
   # Include default devise modules. Others available are:
