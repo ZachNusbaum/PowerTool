@@ -30,7 +30,7 @@
 
 class User < ApplicationRecord
   before_create :set_member_id
-  after_create :send_email
+  # after_create :send_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
