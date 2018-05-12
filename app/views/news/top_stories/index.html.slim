@@ -24,3 +24,4 @@ table.ui.table.selectable.small
         td = story.author
         td = story.source ? story.source.name : 'n/a'
         td = link_to 'Read more', story.story_url
+center == paginate @stories

@@ -41,6 +41,7 @@ end
 group :development, :test do
   gem "factory_bot_rails"
   gem "better_errors"
+  gem "binding_of_caller"
   gem "rspec-rails"
   gem "rspec_junit_formatter"
   gem "rubocop", require: false
@@ -49,8 +50,6 @@ end
 
 group :development do
   gem "annotate"
-  gem "better_errors"
-  gem "binding_of_caller"
   gem "dotenv-rails"
   gem "launchy"
   gem "listen"
@@ -86,3 +85,4 @@ gem "receipts"
 gem "aws-sdk-s3", require: false
 gem "mini_magick"
 gem 'semantic-ui-sass'
+gem "kaminari"

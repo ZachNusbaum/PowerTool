@@ -474,6 +474,7 @@ DEPENDENCIES
   faraday_middleware
   jquery-rails
   jwt
+  kaminari
   launchy
   letter_opener
   listen

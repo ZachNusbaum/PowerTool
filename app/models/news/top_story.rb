@@ -21,6 +21,7 @@
 
 class News::TopStory < ApplicationRecord
   has_secure_token
+  paginates_per 10
 
   def to_param
     self.token
