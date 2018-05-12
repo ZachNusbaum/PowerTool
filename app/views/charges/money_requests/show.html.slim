@@ -1,6 +1,7 @@
 h1 Money Request
 hr
-p.lead #{@money_request.user.email} has requested a payment.
+p.lead #{@money_request.user.email} has requested a payment:
+p #{@money_request.amount.format} for "#{@money_request.description}".
 - unless @money_request.paid?
   = form_tag charges_money_request_payments_path(@money_request) do
     |
