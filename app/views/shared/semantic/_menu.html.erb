@@ -1,0 +1,23 @@
+<div class="ui fixed inverted menu">
+  <div class="ui container">
+    <a href="#" class="header item">
+      PowerTools
+    </a>
+    <a href="#" class="item">Home</a>
+    <div class="ui simple dropdown item">
+      Charges <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="header">Money Requests</div>
+        <%= link_to 'New', new_charges_money_request_path, class: 'item' %>
+      </div>
+    </div>
+
+    <div class="ui simple dropdown item">
+      Documents <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="header">Deliveries</div>
+        <%= link_to 'New', new_document_delivery_path, class: 'item' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 class Charges::MoneyRequestsController < ApplicationController
+  layout 'semantic'
   def show
     @money_request = Charges::MoneyRequest.find(params[:id])
   end

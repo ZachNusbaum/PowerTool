@@ -1,4 +1,5 @@
 class Document::DeliveriesController < ApplicationController
+  layout 'semantic'
   before_action :authenticate_user!
   before_action :set_delivery, only: [:show]
   before_action :expired, only: [:show]
@@ -13,7 +14,7 @@ class Document::DeliveriesController < ApplicationController
   def create
     @delivery = Document::Delivery.new(delivery_params)
     @delivery.user = current_user
-    if @delivery.save!
+    if @delivery.save
       Document::DeliveryMailer.notification(@delivery).deliver_later! unless @delivery.recipient_email.blank?
       redirect_to document_delivery_path(@delivery)
     else

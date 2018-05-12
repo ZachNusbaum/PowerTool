@@ -1,5 +1,6 @@
 class News::TopStoriesController < ApplicationController
   before_action :authenticate_user!
+  layout 'semantic'
   def index
     @stories = News::TopStory.all.order(published_at: :desc)
   end

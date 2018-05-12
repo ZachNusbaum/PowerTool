@@ -27,4 +27,6 @@ class Document::Delivery < ApplicationRecord
   has_one_attached :file
 
   attribute :expires_at, :datetime, default: 1.week.from_now
+
+  validates :description, :expires_at, :file, presence: true
 end
