@@ -22,15 +22,12 @@
 
 class News::TopStory < ApplicationRecord
   has_secure_token
-  belongs_to :source, class_name: 'News::Source', foreign_key: 'source_id'
+  belongs_to :source, class_name: 'News::Source', foreign_key: 'source_id',
+    optional: true
   paginates_per 10
 
   def to_param
     self.token
   end
 
-  def source
-    return false if self.source_id.blank?
-    News::Source.find_by_source_id(self.source_id)
-  end
 end
