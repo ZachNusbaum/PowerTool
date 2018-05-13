@@ -25,6 +25,6 @@ table.ui.table.selectable.small
         td = story.published_at.strftime('%b %d, %Y %I:%M %p')
         td = link_to story.title, news_top_story_path(story)
         td = story.author
-        td = story.source ? story.source.name : 'n/a'
+        td = story.source.try(:name)
         td = link_to 'Read more', story.story_url
 center == paginate @stories
