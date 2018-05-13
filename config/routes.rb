@@ -31,7 +31,9 @@ Rails.application.routes.draw do
 
   require 'sidekiq/web'
   require 'sidekiq-scheduler/web'
-  mount Sidekiq::Web => '/sidekiq'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   #mount PolicyManager::Engine => "/policies"
 
   root to: "pages#root"
