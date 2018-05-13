@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :news do
     patch 'email_toggle', to: 'top_stories#email_opt_in_toggle'
     resources :top_stories, only: [:index, :show]
+    resources :sources, only: [:index, :show]
   end
   namespace :parsers do
     resources :gym_logs, only: [:new, :create]

@@ -1,0 +1,13 @@
+h1 News Sources
+hr
+table.ui.definition.table
+  thead
+    tr
+      th
+      th Description
+  tbody
+    - @sources.each do |source|
+      tr
+        td = link_to source.name, news_source_path(source)
+        td = source.description
+center = paginate @sources

@@ -30,6 +30,7 @@
         .header
           | Top Stories
         = link_to 'View All', news_top_stories_path, class: 'item'
+        = link_to 'View Sources', news_sources_path, class: 'item'
     .ui.right.inverted.menu
       - if user_signed_in?
         .ui.simple.dropdown.item

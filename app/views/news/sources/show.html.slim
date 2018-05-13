@@ -1,0 +1,17 @@
+h1 Viewing Source: #{@source.name}
+hr
+table.ui.table
+  thead
+    tr
+      th Title
+      th Description
+      th Published at
+      th Author
+  tbody
+    - @stories.each do |story|
+      tr
+        td = link_to story.title, news_top_story_path(story)
+        td = story.description
+        td = story.published_at
+        td = story.author
+center = paginate @stories
