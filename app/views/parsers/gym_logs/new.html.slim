@@ -1,17 +1,18 @@
 h1 Gym Log Parser
 p Copy and paste the HTML table from the LA Fitness website into the box below.
-= form_with model: @parser, local: true, method: :post do |f|
-  .form-group
+= form_with model: @parser, local: true, method: :post, class: 'ui form' do |f|
+  .field
     = f.label :raw_log
     = f.text_area :raw_log, class: 'form-control'
-  = f.submit 'Parse', class: 'btn btn-primary'
+  .field = f.submit 'Parse', class: 'ui small blue button'
 
   - if @parser.valid?
     h5 Parsed Successfully:
-    p
-      b You have been to the gym #{@parser.result.select{ |r| (r[:time] < Time.now) && (r[:time] >= 2.weeks.ago) }.count} time(s) in the last 2 weeks.
+    .ui.blue.message
+      |
+        You have been to the gym #{@parser.result.select{ |r| (r[:time] < Time.now) && (r[:time] >= 2.weeks.ago) }.count} time(s) in the last 2 weeks.
     hr
-    table.table.table-sm.table-bordered.table-hover
+    table.ui.table
       thead
         tr
           th Date
