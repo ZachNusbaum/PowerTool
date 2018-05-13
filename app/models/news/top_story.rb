@@ -22,6 +22,7 @@
 
 class News::TopStory < ApplicationRecord
   has_secure_token
+  belongs_to :source, class_name: 'News::Source', foreign_key: 'source_id'
   paginates_per 10
 
   def to_param

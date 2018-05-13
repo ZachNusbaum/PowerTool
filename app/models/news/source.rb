@@ -22,4 +22,5 @@
 
 class News::Source < ApplicationRecord
   has_secure_token
+  has_many :stories, class_name: 'News::TopStory', primary_key: 'source_id'
 end
