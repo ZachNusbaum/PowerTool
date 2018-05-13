@@ -1,5 +1,6 @@
 class News::PopulateTopStories < ActiveInteraction::Base
   def execute
+    @batch_token = SecureRandom.uuid
     articles.each do |article|
       News::TopStory.find_or_initialize_by(published_at: Chronic.parse(article['publishedAt'])) do |story|
         story.source_id = article['source']['id']
@@ -9,6 +10,7 @@ class News::PopulateTopStories < ActiveInteraction::Base
         story.story_url = article['url']
         story.image_url = article['urlToImage']
         story.published_at = Chronic.parse(article['publishedAt'])
+        story.batch_token = @batch_token
       end.save
     end
   end
