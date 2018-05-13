@@ -5,6 +5,11 @@
     a.item[href="/"]
       | Home
     .ui.simple.dropdown.item
+      |  Parsers
+      i.dropdown.icon
+      .menu
+        = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
+    .ui.simple.dropdown.item
       |  Charges
       i.dropdown.icon
       .menu
