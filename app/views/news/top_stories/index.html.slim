@@ -8,6 +8,9 @@ p.small Powered by NewsApi.org
     class: 'ui small blue button', method: :patch
 
 hr
+.ui.grey.message
+  | 
+    Top stories last fetched at #{News::TopStory.last.created_at.strftime('%I:%M %p')}
 table.ui.table.selectable.small
   thead
     tr

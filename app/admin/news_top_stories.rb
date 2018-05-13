@@ -30,6 +30,7 @@ ActiveAdmin.register News::TopStory do
       row :title
       row :source
       row :description
+      row :batch_token
       row :published_at
     end
   end
