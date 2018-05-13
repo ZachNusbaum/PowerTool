@@ -1,0 +1,18 @@
+h2
+  | Log in
+= form_with(model: resource, as: resource_name, url: session_path(resource_name),
+  class: 'ui form', local: true) do |f|
+  .form-inputs
+    .field
+      = f.label :email
+      = f.text_field :email, required: false, autofocus: true
+    .field
+      = f.label :password
+      = f.password_field :password, required: false
+    .field
+      = f.label :remember_me
+      = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
+  .form-actions
+    .field
+      = f.submit 'Sign in', class: 'ui blue button'
+= render "devise/shared/links"

@@ -1,4 +1,5 @@
 class Charges::MoneyRequestsController < ApplicationController
+  before_action :authenticate_admin_user!, only: [:new, :create]
   layout 'semantic'
   def show
     @money_request = Charges::MoneyRequest.find(params[:id])

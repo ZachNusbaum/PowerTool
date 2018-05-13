@@ -1,0 +1,38 @@
+.ui.fixed.inverted.menu
+  .ui.container
+    a.header.item[href="/"]
+      |  PowerTools 
+    a.item[href="/"]
+      | Home
+    .ui.simple.dropdown.item
+      |  Charges
+      i.dropdown.icon
+      .menu
+        .header
+          | Money Requests
+        = link_to 'New', new_charges_money_request_path, class: 'item'
+    .ui.simple.dropdown.item
+      |  Documents
+      i.dropdown.icon
+      .menu
+        .header
+          | Deliveries
+        = link_to 'New', new_document_delivery_path, class: 'item'
+    .ui.simple.dropdown.item
+      |  News 
+      i.dropdown.icon
+      .menu
+        .header
+          | Top Stories
+        = link_to 'View All', news_top_stories_path, class: 'item'
+    .ui.right.inverted.menu
+      - if user_signed_in?
+        .ui.simple.dropdown.item
+          = current_user.name
+          i.dropdown.icon
+          .menu
+            = link_to 'Edit Profile', edit_user_registration_path, class: 'item'
+            = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'item'
+      - else
+        = link_to 'Sign in', new_user_session_path, class: 'item'
+

@@ -7,9 +7,11 @@ hr
   .field
     = f.label :description
     = f.text_area :description
-  .field
+  .2field
     = f.label :expires_at
-    = f.datetime_field :expires_at
+    br
+    = f.datetime_select :expires_at, class: 'ui small field', ampm: true
+    hr
   .field = f.file_field :file
   .field
     = f.submit "Deliver File", class: 'ui green button'
