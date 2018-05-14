@@ -11,8 +11,12 @@
       | Utilities
       i.dropdown.icon
       .menu
-        .header Parsers
-        = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
+        .item
+          .header Parsers
+          .menu = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
+        .item
+          .header Documents
+          .menu = link_to 'New Delivery', new_document_delivery_path, class: 'item'
 
 
 
@@ -23,13 +27,6 @@
         .header Money Requests
         = link_to 'New', new_charges_money_request_path, class: 'item'
 
-
-    .ui.simple.dropdown.item
-      |  Documents
-      i.dropdown.icon
-      .menu
-        .header Deliveries
-        = link_to 'New', new_document_delivery_path, class: 'item'
 
 
     .ui.simple.dropdown.item
