@@ -26,6 +26,17 @@ class News::TopStory < ApplicationRecord
     optional: true, primary_key: 'source_id'
   paginates_per 10
 
+  def self.batch_tokens_with_count
+    connection.
+      select_all(
+        "SELECT DISTINCT batch_token, COUNT(*) FROM news_top_stories GROUP BY batch_token;"
+      ).to_hash
+  end
+
+  def self.batch_tokens
+    batch_tokens_with_count.map{|b| b['batch_token']}
+  end
+
   def to_param
     self.token
   end
