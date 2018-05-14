@@ -1,7 +1,7 @@
 class News::BookmarksController < ApplicationController
   before_action :authenticate_user!
   def index
-    @bookmarks = current_user.bookmarks
+    @bookmarks = current_user.bookmarks.page params[:page]
   end
 
   def create
