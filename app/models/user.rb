@@ -39,6 +39,9 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github]
   enum role: [:basic, :admin]
 
+  has_many :bookmarks, class_name: 'News::Bookmark'
+  has_many :top_stories, through: :bookmarks, foreign_key: 'top_story_id',
+    class_name: 'News::TopStory'
   has_many :messages, class_name: "Ahoy::Message", as: :user
   has_many :events, class_name: "Ahoy::Event"
   has_many :visits, class_name: "Ahoy::Visit"
@@ -70,6 +73,10 @@ class User < ApplicationRecord
 
   def login_token(expires_at = (Time.zone.now + 1.day).to_datetime)
     Tokens::AutoLogin.run!(user: self, expires_at: expires_at)
+  end
+
+  def bookmark(story)
+    self.top_stories << story
   end
 
   private
