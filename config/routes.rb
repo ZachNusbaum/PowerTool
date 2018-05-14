@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :news do
-    get 'bookmarks/index'
-  end
   ActiveAdmin.routes(self)
   namespace :charges do
     resources :money_requests, only: [:new, :create, :show] do
@@ -24,6 +21,10 @@ Rails.application.routes.draw do
   namespace :users do
     resources :email_logs, only: [:index]
     resources :events, only: [:index]
+  end
+  scope :users do
+    get 'bookmarks/stories', to: 'news/bookmarks#index'
+    delete 'bookmarks/stories/:id', to: 'news/bookmarks#destroy', as: 'remove_story_bookmark'
   end
   scope :auth do
     get '/', to: 'users/automatic_logins#new', as: 'auto_login'

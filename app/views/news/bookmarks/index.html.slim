@@ -1,2 +1,17 @@
-h1 News::Bookmarks#index
-p Find me in app/views/news/bookmarks/index.html.slim
+h1 Your Bookmarks
+table.ui.table
+  thead
+    tr
+      th Bookmarked on
+      th Story Title
+      th Actions
+  tbody
+    - @bookmarks.each do |bookmark|
+      tr
+        td = bookmark.created_at.strftime('%b %d, %Y %I:%M%p')
+        td = bookmark.top_story.title
+        td
+          = link_to 'View', news_top_story_path(bookmark.top_story)
+          |  - 
+          = link_to 'Unbookmark', remove_story_bookmark_path(bookmark),
+            method: :delete
