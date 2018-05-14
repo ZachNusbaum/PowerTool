@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :news do
+    get 'bookmarks/index'
+  end
   ActiveAdmin.routes(self)
   namespace :charges do
     resources :money_requests, only: [:new, :create, :show] do
@@ -10,7 +13,9 @@ Rails.application.routes.draw do
   end
   namespace :news do
     patch 'email_toggle', to: 'top_stories#email_opt_in_toggle'
-    resources :top_stories, only: [:index, :show]
+    resources :top_stories, only: [:index, :show] do
+      post 'bookmark', on: :member, to: 'bookmarks#create'
+    end
     resources :sources, only: [:index, :show]
   end
   namespace :parsers do

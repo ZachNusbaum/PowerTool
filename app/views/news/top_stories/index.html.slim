@@ -26,5 +26,10 @@ table.ui.table.selectable.small
         td = link_to story.title, news_top_story_path(story)
         td = story.author
         td = story.source.try(:name)
-        td = link_to 'Read more', story.story_url
+        td
+          - unless current_user.top_stories.include?(story)
+            = form_tag bookmark_news_top_story_path(story), remote: true do |f|
+              = submit_tag 'Bookmark', id: "bk_#{story.token}"
+          - else
+            | Bookmarked!
 center == paginate @stories

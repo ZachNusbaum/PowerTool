@@ -75,8 +75,12 @@ class User < ApplicationRecord
     Tokens::AutoLogin.run!(user: self, expires_at: expires_at)
   end
 
-  def bookmark(story)
-    self.top_stories << story
+  def bookmark_story(story)
+    if self.top_stories << story
+      story
+    else
+      false
+    end
   end
 
   private

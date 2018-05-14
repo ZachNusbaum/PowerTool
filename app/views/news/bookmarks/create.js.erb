@@ -1,0 +1,5 @@
+<% if @bookmark %>
+  $("#<%= "bk_#{@bookmark.token}" %>").replaceWith('Bookmarked!');
+<% else %>
+    alert('Sorry, there was an error adding the bookmark!');
+<% end %>
