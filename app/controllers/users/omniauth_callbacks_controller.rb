@@ -31,7 +31,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message :notice, :success, kind: kind
     end
 
-    UsersMailer.new_service(@service).deliver_later! if @send_email
+    UsersMailer.new_service(service).deliver_later! if @send_email
   end
 
   def auth
