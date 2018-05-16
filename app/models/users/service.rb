@@ -4,7 +4,7 @@
 #
 #  access_token        :string
 #  access_token_secret :string
-#  auth                :text
+#  auth                :jsonb
 #  created_at          :datetime         not null
 #  expires_at          :datetime
 #  id                  :bigint(8)        not null, primary key
@@ -16,7 +16,7 @@
 #
 # Indexes
 #
-# index_users_services_on_user_id  (user_id)
+#  index_users_services_on_user_id  (user_id)
 #
 # Foreign Keys
 #

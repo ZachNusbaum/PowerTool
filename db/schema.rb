@@ -233,7 +233,7 @@ ActiveRecord::Schema.define(version: 2018_05_16_043032) do
     t.string "access_token_secret"
     t.string "refresh_token"
     t.datetime "expires_at"
-    t.text "auth"
+    t.jsonb "auth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

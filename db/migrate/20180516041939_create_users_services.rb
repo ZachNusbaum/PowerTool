@@ -7,7 +7,7 @@ class CreateUsersServices < ActiveRecord::Migration[5.2]
       t.string :access_token_secret
       t.string :refresh_token
       t.datetime :expires_at
-      t.text :auth
+      t.jsonb :auth
 
       t.timestamps
     end
