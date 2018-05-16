@@ -13,6 +13,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     handle_auth 'Facebook'
   end
+  
+  def twitter
+    handle_auth "Twitter"
+  end
 
   private
 
