@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  use_doorkeeper
   ActiveAdmin.routes(self)
   namespace :charges do
     resources :money_requests, only: [:new, :create, :show] do
