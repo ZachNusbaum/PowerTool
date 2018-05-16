@@ -1,0 +1,12 @@
+h1 Your Connected Accounts
+hr
+table.ui.table
+  thead
+    tr
+      th Provider
+      th Actions
+  tbody
+    - @services.each do |service|
+      tr
+        td = service.provider.titleize
+        td

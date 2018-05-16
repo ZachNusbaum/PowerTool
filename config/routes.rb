@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :users do
     resources :email_logs, only: [:index]
     resources :events, only: [:index]
+    resources :services, only: [:index]
   end
   scope :users do
     get 'bookmarks/stories', to: 'news/bookmarks#index'
