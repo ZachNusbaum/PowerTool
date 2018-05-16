@@ -36,7 +36,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: %i[github facebook]
+         :omniauthable, omniauth_providers: %i[github facebook twitter]
   enum role: [:basic, :admin]
 
   has_many :bookmarks, class_name: 'News::Bookmark'
