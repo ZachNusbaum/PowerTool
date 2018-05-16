@@ -69,4 +69,13 @@ Rails.application.routes.draw do
   # Privacy Policy
   get '/privacy', to: 'pages#privacy_policy'
   root to: "pages#root"
+
+
+  namespace :api do
+    namespace :v1 do
+      scope :news do
+        get 'bookmarks', to: 'news#bookmarks'
+      end
+    end
+  end
 end
