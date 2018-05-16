@@ -38,9 +38,9 @@ class Users::Service < ApplicationRecord
     expires_at? && expires_at <= Time.zone.now
   end
 
-  def access_token
-    send("#{provider}_refresh_token!", super) if expired?
-  end
+  #def access_token
+  #  send("#{provider}_refresh_token!", super) if expired?
+  #end
 
   def github_client
     Octokit::Client.new(access_token: access_token)
