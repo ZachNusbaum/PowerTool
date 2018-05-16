@@ -58,7 +58,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       access_token: auth.credentials.token,
       access_token_secret: auth.credentials.secret,
       refresh_token: auth.credentials.refresh_token,
-      auth: auth.to_h
+      auth: auth.to_json
     }
   end
 
