@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   end
   #mount PolicyManager::Engine => "/policies"
 
+  get '/terms', to: 'pages#terms'
   get '/privacy', to: 'pages#privacy_policy'
   root to: "pages#root"
 end
