@@ -2,6 +2,8 @@ Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
 
+  enable_application_owner :confirmation => false
+
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do |routes|
     # fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
