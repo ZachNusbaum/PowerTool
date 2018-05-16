@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_16_041939) do
+ActiveRecord::Schema.define(version: 2018_05_16_043032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -236,10 +236,13 @@ ActiveRecord::Schema.define(version: 2018_05_16_041939) do
     t.text "auth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_users_services_on_user_id"
   end
 
   add_foreign_key "charges_money_requests", "users"
   add_foreign_key "document_deliveries", "users"
   add_foreign_key "news_bookmarks", "news_top_stories", column: "top_story_id"
   add_foreign_key "news_bookmarks", "users"
+  add_foreign_key "users_services", "users"
 end

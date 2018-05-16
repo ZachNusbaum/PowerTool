@@ -12,6 +12,15 @@
 #  refresh_token       :string
 #  uid                 :string
 #  updated_at          :datetime         not null
+#  user_id             :bigint(8)
+#
+# Indexes
+#
+#  index_users_services_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 
 FactoryBot.define do

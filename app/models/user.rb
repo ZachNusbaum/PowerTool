@@ -46,6 +46,7 @@ class User < ApplicationRecord
   has_many :events, class_name: "Ahoy::Event"
   has_many :visits, class_name: "Ahoy::Visit"
   has_many :document_deliveries, class_name: "Document::Delivery"
+  has_many :services, class_name: 'Users::Service'
 
   validates :email, uniqueness: true
 
