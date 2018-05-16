@@ -30,8 +30,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect user, event: :authentication
       set_flash_message :notice, :success, kind: kind
     end
-
-    UsersMailer.new_service(service).deliver_later! if @send_email
   end
 
   def auth
