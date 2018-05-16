@@ -11,6 +11,15 @@ class UsersMailer < ApplicationMailer
       from: 'ptools@zdnenterprises.com'
   end
 
+  def new_service(service)
+    @service = service
+    @user = service.user
+
+    mail to: service.user.email,
+      subject: 'Welcome to ZDNE PowerTools!',
+      from: "#{service.provider}-accounts@zdnenterprises.com"
+  end
+
   def welcome(user)
     @user = user
 
