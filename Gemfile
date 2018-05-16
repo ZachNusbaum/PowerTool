@@ -89,3 +89,4 @@ gem 'semantic-ui-sass'
 gem "kaminari"
 gem "pundit"
 gem "octokit"
+gem "koala"
