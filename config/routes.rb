@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Add routes for the doorkeeper gem
   use_doorkeeper do
-    controllers :applications => 'oauth/applications'
+    #controllers :applications => 'oauth/applications'
   end
 
   # Add routes for the admin panel
