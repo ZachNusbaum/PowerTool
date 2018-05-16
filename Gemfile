@@ -74,6 +74,7 @@ gem "activeadmin"
 
 gem "omniauth"
 gem "omniauth-github"
+gem "omniauth-facebook"
 gem "ahoy_email"
 gem "ahoy_matey"
 gem "stripe"

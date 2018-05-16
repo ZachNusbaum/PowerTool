@@ -10,6 +10,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_auth "Github"
   end
 
+  def facebook
+    handle_auth 'Facebook'
+  end
+
   private
 
   def handle_auth(kind)

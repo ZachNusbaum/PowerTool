@@ -26,7 +26,7 @@
 class Users::Service < ApplicationRecord
   belongs_to :user
 
-  %w{ github }.each do |provider|
+  %w{ github facebook }.each do |provider|
     scope provider, ->{ where(provider: provider) }
   end
 
