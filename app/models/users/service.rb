@@ -41,4 +41,8 @@ class Users::Service < ApplicationRecord
   def access_token
     send("#{provider}_refresh_token!", super) if expired?
   end
+
+  def github_client
+    Octokit::Client.new(access_token: access_token)
+  end
 end

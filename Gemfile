@@ -87,3 +87,4 @@ gem "mini_magick"
 gem 'semantic-ui-sass'
 gem "kaminari"
 gem "pundit"
+gem "octokit"
