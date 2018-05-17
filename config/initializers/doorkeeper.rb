@@ -4,6 +4,7 @@ Doorkeeper.configure do
 
   enable_application_owner :confirmation => false
 
+
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do |routes|
     # fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
@@ -140,3 +141,5 @@ Doorkeeper.configure do
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
 end
+Doorkeeper::AuthorizedApplicationsController.layout "semantic"
+

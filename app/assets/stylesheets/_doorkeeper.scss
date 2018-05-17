@@ -1,0 +1,13 @@
+.doorkeeper-authorized_applications {
+  table {
+    @extend .ui;
+    @extend .table;
+  }
+
+  input[type="submit"] {
+    @extend .ui;
+    @extend .small;
+    @extend .red;
+    @extend .button;
+  }
+}
