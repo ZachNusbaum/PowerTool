@@ -13,6 +13,8 @@ module PowerTools
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    config.active_storage.variant_processor = :vips
+
     # Enable/disable generators.
     config.generators do |g|
       # Core Rails
