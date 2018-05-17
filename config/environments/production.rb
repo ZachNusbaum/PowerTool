@@ -105,8 +105,3 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
-
-MiniMagick.configure do |config|
-  config.validate_on_create = false
-  config.validate_on_write = false
-end
