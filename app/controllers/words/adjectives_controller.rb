@@ -1,4 +1,6 @@
 class Words::AdjectivesController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @adjectives = Words::FindAdjectives.new
   end
@@ -7,6 +9,9 @@ class Words::AdjectivesController < ApplicationController
     @adjectives = Words::FindAdjectives.run(word_params)
     unless @adjectives.valid?
       redirect_ to words_find_adjectives_path, notice: 'Sorry, that query is invalid.'
+      ahoy.track 'Invalid adjectives search', noun: @adjectives.noun
+    else
+      ahoy.track 'Successful adjective search', noun: @adjectives.noun
     end
   end
 

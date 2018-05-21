@@ -4,7 +4,10 @@ class Words::FindAdjectives < ActiveInteraction::Base
   validates :noun, presence: true
 
   def execute
-    query = WordDescriptor.words.that_describe(noun)
+    query = WordDescriptor.
+      words.
+      that_describe(noun).
+      limit(10)
     query.fetch
   end
 end

@@ -3,6 +3,6 @@ class Users::EventsController < ApplicationController
   layout 'semantic'
   
   def index
-    @events = current_user.events
+    @events = current_user.events.order(time: :desc)
   end
 end
