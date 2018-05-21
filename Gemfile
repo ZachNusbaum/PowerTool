@@ -95,3 +95,4 @@ gem "koala"
 gem "doorkeeper"
 gem "ruby-vips"
 gem "flutie"
+gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'

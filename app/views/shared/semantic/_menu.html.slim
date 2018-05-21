@@ -11,12 +11,21 @@
       | Utilities
       i.dropdown.icon
       .menu
-        .item
-          .header Parsers
-          .menu = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
-        .item
-          .header Documents
-          .menu = link_to 'New Delivery', new_document_delivery_path, class: 'item'
+        
+        .header Parsers
+        = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
+
+        .divider
+
+        .header Documents
+        = link_to 'New Delivery', new_document_delivery_path, class: 'item'
+
+        .divider
+
+        .header Words
+        = link_to 'Adjective Finder', words_find_adjectives_path, 
+          class: 'item'
+
 
 
 

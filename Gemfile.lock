@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ZachNusbaum/word_descriptor.git
+  revision: 0c6157fc01b011098cd77b74a6b3933e3b77450a
+  specs:
+    WordDescriptor (0.1.0)
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -182,6 +189,8 @@ GEM
       activesupport (>= 4.1)
     hashie (3.5.7)
     htmlentities (4.3.4)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.8.0)
@@ -484,6 +493,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  WordDescriptor!
   active_interaction (~> 3.6.1)
   activeadmin
   ahoy_email

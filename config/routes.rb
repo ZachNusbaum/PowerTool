@@ -49,6 +49,13 @@ Rails.application.routes.draw do
     get '/', to: 'users/automatic_logins#new', as: 'auto_login'
   end
 
+  namespace :words do
+    scope :adjectives do
+      get '/', to: 'adjectives#new', as: 'find_adjectives'
+      get '/result', to: 'adjectives#show', as: 'adjectives_results'
+    end
+  end
+
   # Routes for devise
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',

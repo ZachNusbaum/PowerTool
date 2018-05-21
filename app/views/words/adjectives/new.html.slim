@@ -1,0 +1,10 @@
+h1 Adjective Finder
+.ui.blue.message Enter a noun to find adjectives that commonly describe
+  it:
+= form_with model: @adjectives, local: true, url: words_adjectives_results_path, method: :get,
+  class: 'ui form' do |f|
+  .field
+    = f.label :noun
+    = f.text_field :noun
+  .field
+    = f.submit 'Lookup', class: 'ui small green button'

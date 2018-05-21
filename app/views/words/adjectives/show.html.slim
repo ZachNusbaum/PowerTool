@@ -1,0 +1,14 @@
+h1 Adjective Results
+table.ui.table.striped
+  thead
+    tr
+      th Words that describe #{@adjectives.noun}
+      th Score
+  tbody
+    - @adjectives.result.each do |result|
+      tr
+        td 
+          strong 
+            u = result["word"]
+          |  potato
+        td = result["score"]
