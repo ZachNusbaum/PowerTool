@@ -2,12 +2,17 @@ h1 Trigger Word Results
 table.ui.striped.selectable.celled.table
   thead
     tr
-      th[colspan="2"] Words that are triggered by #{@triggers.word}
+      th[colspan="3"] Words that are triggered by #{@triggers.word}
     tr
       th Word
       th Score
+      th Pronunciation (IPA)
   tbody
     - @triggers.result.each do |trigger|
+      - parts_of_speech = trigger['tags'].select{ |t| t =~ /^(n|v|adj|adv|u)$/ }.join(', ')
       tr
-        td = trigger['word']
+        td #{trigger['word']} (<em>#{parts_of_speech}</em>)
         td = trigger['score']
+        td
+          = trigger['tags'].select{|t| t =~ /^ipa_pron/}.\
+            first.gsub(/^ipa_pron:/, '')
