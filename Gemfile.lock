@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/ZachNusbaum/word_descriptor.git
-  revision: 0c6157fc01b011098cd77b74a6b3933e3b77450a
+  revision: 578a564924197dea76a0f22378b97378a7765a18
   specs:
-    WordDescriptor (0.1.0)
+    WordDescriptor (0.1.2)
       httparty
 
 GEM

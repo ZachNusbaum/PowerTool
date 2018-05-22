@@ -1,0 +1,13 @@
+h1 Trigger Word Results
+table.ui.striped.selectable.celled.table
+  thead
+    tr
+      th[colspan="2"] Words that are triggered by #{@triggers.word}
+    tr
+      th Word
+      th Score
+  tbody
+    - @triggers.result.each do |trigger|
+      tr
+        td = trigger['word']
+        td = trigger['score']

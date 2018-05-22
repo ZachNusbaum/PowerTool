@@ -54,6 +54,11 @@ Rails.application.routes.draw do
       get '/', to: 'adjectives#new', as: 'find_adjectives'
       get '/result', to: 'adjectives#show', as: 'adjectives_results'
     end
+
+    scope :triggers do
+      get '/', to: 'triggers#new', as: 'find_triggers'
+      get '/result', to: 'triggers#show', as: 'triggers_results'
+    end
   end
 
   # Routes for devise

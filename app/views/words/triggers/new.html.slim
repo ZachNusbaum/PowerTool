@@ -1,0 +1,10 @@
+h1 Find Trigger Words
+.ui.blue.message Find words that are most commonly associated with the word you
+  specify below.
+= form_with model: @triggers, url: words_triggers_results_path, method: :get,
+  local: true, class: 'ui form' do |f|
+  .field
+    = f.label :word
+    = f.text_field :word
+  .field
+    = f.submit 'Lookup', class: 'ui small green button'
