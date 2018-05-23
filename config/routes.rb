@@ -61,6 +61,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :emails do
+    post '/incoming', to: 'incoming#create'
+  end
+
   # Routes for devise
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
