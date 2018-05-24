@@ -58,6 +58,7 @@
           .menu
             .header = current_user.name
             = link_to 'Edit Profile', edit_user_registration_path, class: 'item'
+            = link_to 'Connected Accounts', users_services_path, class: 'item'
             = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'item'
             .divider
             .header External Apps

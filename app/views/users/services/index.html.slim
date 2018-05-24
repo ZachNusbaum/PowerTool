@@ -1,12 +1,12 @@
 h1 Your Connected Accounts
-hr
+
 table.ui.table
   thead
     tr
       th Provider
       th Actions
   tbody
-    - @services.each do |service|
+    - ['github', 'facebook', 'google_oauth2', 'spotify', 'twitter'].each do |p|
       tr
-        td = service.provider.titleize
-        td
+        td = p.titleize
+        td = render 'service', provider_name: p

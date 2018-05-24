@@ -1,0 +1,6 @@
+- service = current_user.services.find_by(provider: provider_name)
+- if service
+  | #{provider_name.titleize} connected!
+- else
+  = link_to "Link #{provider_name.titleize} account",
+    "/users/auth/#{provider_name.downcase}"

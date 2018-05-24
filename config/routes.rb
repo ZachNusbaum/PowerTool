@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :users do
+    get 'services/index'
+  end
   # Add routes for the doorkeeper gem
   use_doorkeeper do
     controllers :applications => 'oauth/applications'
