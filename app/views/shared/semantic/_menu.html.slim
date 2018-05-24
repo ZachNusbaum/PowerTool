@@ -22,6 +22,11 @@
 
         .divider
 
+        .header DMARC
+        = link_to 'Your Accounts', emails_dmarc_accounts_path, class: 'item'
+
+        .divider
+
         .header Words
         = link_to 'Adjective Finder', words_find_adjectives_path,
           class: 'item'

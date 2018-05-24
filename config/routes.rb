@@ -66,6 +66,14 @@ Rails.application.routes.draw do
 
   namespace :emails do
     post '/incoming', to: 'incoming#create'
+    scope :dmarc do
+      get '/', to: 'dmarc_accounts#index', as: 'dmarc_accounts'
+      post '/', to: 'dmarc_accounts#create', as: 'dmarc'
+      get '/new', to: 'dmarc_accounts#new', as: 'new_dmarc_account'
+      get '/:account_id', to: 'dmarc_accounts#show', as: 'dmarc_account'
+      get '/:account_id/reports/:report_id', to: 'dmarc_reports#show',
+        as: 'dmarc_report'
+    end
   end
 
   # Routes for devise

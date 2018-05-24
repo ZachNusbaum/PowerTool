@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_234746) do
+ActiveRecord::Schema.define(version: 2018_05_24_204749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,19 @@ ActiveRecord::Schema.define(version: 2018_05_23_234746) do
     t.string "recipient_email"
     t.index ["token"], name: "index_document_deliveries_on_token", unique: true
     t.index ["user_id"], name: "index_document_deliveries_on_user_id"
+  end
+
+  create_table "emails_dmarc_accounts", force: :cascade do |t|
+    t.string "api_key"
+    t.bigint "user_id"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["api_key"], name: "index_emails_dmarc_accounts_on_api_key", unique: true
+    t.index ["title"], name: "index_emails_dmarc_accounts_on_title", unique: true
+    t.index ["token"], name: "index_emails_dmarc_accounts_on_token", unique: true
+    t.index ["user_id"], name: "index_emails_dmarc_accounts_on_user_id"
   end
 
   create_table "emails_incoming_messages", force: :cascade do |t|
@@ -301,6 +314,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_234746) do
 
   add_foreign_key "charges_money_requests", "users"
   add_foreign_key "document_deliveries", "users"
+  add_foreign_key "emails_dmarc_accounts", "users"
   add_foreign_key "news_bookmarks", "news_top_stories", column: "top_story_id"
   add_foreign_key "news_bookmarks", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"

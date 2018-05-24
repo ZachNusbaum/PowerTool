@@ -1,0 +1,54 @@
+h1 Report ID: #{params[:report_id]}
+table.ui.definition.table
+  tbody
+    tr
+      td SPF Alignment Mode
+      td = @report['spf_alignment_mode']
+    tr
+      td Email
+      td = @report['email']
+    tr
+      td DKIM Alignment Mode
+      td = @report['dkim_alignment_mode']
+    tr
+      td Raw Size
+      td = @report['raw_size']
+    tr
+      td Organization Name
+      td = @report['organization_name']
+    tr
+      td Date Range Begin
+      td = Chronic.parse(@report['date_range_begin'])
+    tr
+      td Subdomain Policy
+      td = @report['subdomain_policy']
+
+h4 Records
+table.ui.celled.table
+  thead
+    tr
+      th SPF Result
+      th Header From
+      th Source IP Version
+      th Source IP
+      th Evaluated SPF
+      th Count
+      th Row #
+      th Host Name
+      th Created at
+      th DKIM Result
+      th Evaluated DKIM
+  tbody
+    - @report['records'].each do |record|
+      tr
+        td = record['spf_result']
+        td = record['header_from']
+        td = record['source_ip_version']
+        td = record['source_ip']
+        td = record['policy_evaluated_spf']
+        td = record['count']
+        td = record['row_num']
+        td = record['host_name']
+        td = Chronic.parse record['created_at']
+        td = record['dkim_result']
+        td = record['policy_evaluated_dkim']

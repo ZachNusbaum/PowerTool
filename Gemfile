@@ -98,3 +98,4 @@ gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'
 gem "sentry-raven"
 gem 'omniauth-spotify'
 gem "rspotify"
+gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'

@@ -1,0 +1,13 @@
+h1 Your DMARC Accounts
+= link_to 'Add New', emails_new_dmarc_account_path, class: 'ui small green \
+button'
+table.ui.table
+  thead
+    tr
+      th Title
+      th Actions
+  tbody
+    - @dmarc_accounts.each do |account|
+      tr
+        td = account.title
+        td = link_to 'View', emails_dmarc_account_path(account)

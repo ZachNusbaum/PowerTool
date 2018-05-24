@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/ZachNusbaum/PostDmarc.git
+  revision: abb78dc2f6b7a5512e76abaa8d3bfb53d141fe1e
+  specs:
+    PostDmarc (0.1.0)
+      faraday
+      faraday_middleware
+
+GIT
   remote: https://github.com/ZachNusbaum/word_descriptor.git
   revision: 22d43bca6612f4d24e4a0876ade0da53583635bf
   specs:
@@ -511,6 +519,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  PostDmarc!
   WordDescriptor!
   active_interaction (~> 3.6.1)
   activeadmin

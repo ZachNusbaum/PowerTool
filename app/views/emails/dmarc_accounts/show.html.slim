@@ -1,0 +1,22 @@
+h1 Account: #{@dmarc_account.try(:title).try(:titleize)}
+h4 Reports
+table.ui.table
+  thead
+    tr
+      th ID
+      th Domain
+      th Date Range Begin
+      /th Date Range End
+      th Created at
+      th External ID
+      th Organization Name
+  tbody
+    - @dmarc_account.client.reports['entries'].sort_by{|e| e['id']}.reverse.each do |entry|
+      tr
+        td = link_to entry['id'], emails_dmarc_report_path(@dmarc_account, entry['id'])
+        td = entry['domain']
+        td = Chronic.parse entry['date_range_begin']
+        /td = Chronic.parse entry['date_range_end']
+        td = Chronic.parse entry['created_at']
+        td = entry['external_id']
+        td = entry['organization_name']

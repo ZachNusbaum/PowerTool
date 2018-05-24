@@ -43,6 +43,7 @@ class User < ApplicationRecord
   has_many :bookmarks, class_name: 'News::Bookmark'
   has_many :top_stories, through: :bookmarks, foreign_key: 'top_story_id',
     class_name: 'News::TopStory'
+  has_many :dmarc_accounts, class_name: "Emails::DmarcAccount"
   has_many :messages, class_name: "Ahoy::Message", as: :user
   has_many :events, class_name: "Ahoy::Event"
   has_many :visits, class_name: "Ahoy::Visit"

@@ -1,0 +1,11 @@
+= form_with model: @dmarc_account, url: emails_dmarc_path, local: true,
+  class: 'ui form' do |f|
+
+  .field
+    = f.label :api_key, 'API Key'
+    = f.text_field :api_key
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.submit "Add DMARC Account"
