@@ -96,3 +96,4 @@ gem "doorkeeper"
 gem "flutie"
 gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'
 gem "sentry-raven"
+gem 'omniauth-spotify'
