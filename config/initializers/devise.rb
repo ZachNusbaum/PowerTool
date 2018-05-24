@@ -275,7 +275,7 @@ Devise.setup do |config|
   config.omniauth :spotify,
     Rails.application.credentials.spotify_key,
     Rails.application.credentials.spotify_secret,
-    scope: 'playlist-read-private user-read-private user-read-email'
+    scope: 'playlist-read-private user-read-private user-read-email user-top-read user-read-recently-played user-read-birthdate user-follow-read streaming user-read-currently-playing user-read-playback-state'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
