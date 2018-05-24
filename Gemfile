@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.5.1"
 
 # Back-endy
-#gem "bootsnap", require: false
+gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
