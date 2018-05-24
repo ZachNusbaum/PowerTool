@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_16_221902) do
+ActiveRecord::Schema.define(version: 2018_05_23_234746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,22 @@ ActiveRecord::Schema.define(version: 2018_05_16_221902) do
     t.string "recipient_email"
     t.index ["token"], name: "index_document_deliveries_on_token", unique: true
     t.index ["user_id"], name: "index_document_deliveries_on_user_id"
+  end
+
+  create_table "emails_incoming_messages", force: :cascade do |t|
+    t.string "token"
+    t.jsonb "headers"
+    t.jsonb "envelope"
+    t.text "plain"
+    t.text "html"
+    t.text "reply_plain"
+    t.string "message_id"
+    t.string "to"
+    t.string "from"
+    t.datetime "sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_emails_incoming_messages_on_token", unique: true
   end
 
   create_table "news_bookmarks", force: :cascade do |t|
