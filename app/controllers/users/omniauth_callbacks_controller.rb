@@ -22,6 +22,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_auth "Google"
   end
 
+  def spotify
+    handle_auth "Spotify"
+  end
+
   private
 
   def handle_auth(kind)
