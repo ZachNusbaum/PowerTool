@@ -51,6 +51,10 @@ class Users::Service < ApplicationRecord
     Koala::Facebook::API.new(access_token)
   end
 
+  def spotify_client
+    RSpotify::User.new(auth)
+  end
+
   def facebook_refresh_token!(token)
     new_token_info = Koala::Facebook::OAuth.new.exchange_access_token_info(token)
     update(access_token: new_token_info["access_token"], expires_at: Time.zone.now + new_token_info["expires_in"])
