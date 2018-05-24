@@ -26,6 +26,6 @@ class Emails::DmarcAccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:emails_dmarc_accounts).permit(:title, :api_key)
+    params.require(:emails_dmarc_account).permit(:title, :api_key)
   end
 end
