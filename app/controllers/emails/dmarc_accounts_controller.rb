@@ -3,14 +3,17 @@ class Emails::DmarcAccountsController < ApplicationController
 
   def index
     @dmarc_accounts = current_user.dmarc_accounts
+    authorize @dmarc_accounts
   end
 
   def new
     @dmarc_account = current_user.dmarc_accounts.new
+    authorize @dmarc_account
   end
 
   def create
     @dmarc_account = current_user.dmarc_accounts.new(account_params)
+    authorize @dmarc_account
     if @dmarc_account.save
       redirect_to emails_dmarc_account_url(@dmarc_account),
         notice: 'Account created successfully.'
@@ -21,6 +24,7 @@ class Emails::DmarcAccountsController < ApplicationController
 
   def show
     @dmarc_account = Emails::DmarcAccount.find_by_token(params[:account_id])
+    authorize @dmarc_account
   end
 
   private
