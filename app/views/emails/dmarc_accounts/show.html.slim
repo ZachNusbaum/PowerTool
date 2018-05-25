@@ -20,3 +20,6 @@ table.ui.table
         td = Chronic.parse entry['created_at']
         td = entry['external_id']
         td = entry['organization_name']
+- if @reports['meta']['next']
+  = link_to 'Next Page', emails_dmarc_account_path(@dmarc_account, after:\
+  @reports['meta']['next'])
