@@ -11,7 +11,7 @@ table.ui.table
       th External ID
       th Organization Name
   tbody
-    - @dmarc_account.client.reports['entries'].sort_by{|e| e['id']}.reverse.each do |entry|
+    - @reports['entries'].sort_by{|e| e['id']}.reverse.each do |entry|
       tr
         td = link_to entry['id'], emails_dmarc_report_path(@dmarc_account, entry['id'])
         td = entry['domain']

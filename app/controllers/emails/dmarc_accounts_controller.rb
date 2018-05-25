@@ -25,6 +25,11 @@ class Emails::DmarcAccountsController < ApplicationController
   def show
     @dmarc_account = Emails::DmarcAccount.find_by_token(params[:account_id])
     authorize @dmarc_account
+    @reports = @dmarc_account.client.reports(
+      before: params[:before], after: params[:after],
+      from_date: params[:from_date], to_date: params[:to_date],
+      limit: params[:limit], reverse: params[:reverse]
+    )
   end
 
   private
