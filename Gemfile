@@ -99,3 +99,4 @@ gem "sentry-raven"
 gem 'omniauth-spotify'
 gem "rspotify"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
+gem 'google-api-client', '~> 0.11'

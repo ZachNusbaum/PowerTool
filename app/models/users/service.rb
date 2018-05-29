@@ -55,6 +55,16 @@ class Users::Service < ApplicationRecord
     RSpotify::User.new(auth)
   end
 
+  def google_oauth2_client
+    client = Google::APIClient.new
+    client.authorization.access_token = access_token
+    client.authorization.refresh_token = refresh_token
+    client.authorization.client_id = Rails.application.credentials.google_key
+    client.authorization.client_secret = Rails.application.credentials.google_secret
+    client.authorization.refresh!
+    client
+  end
+
   def facebook_refresh_token!(token)
     new_token_info = Koala::Facebook::OAuth.new.exchange_access_token_info(token)
     update(access_token: new_token_info["access_token"], expires_at: Time.zone.now + new_token_info["expires_in"])
