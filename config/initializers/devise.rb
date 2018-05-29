@@ -268,8 +268,9 @@ Devise.setup do |config|
     Rails.application.credentials.google_key,
     Rails.application.credentials.google_secret,
     { 
-      scope: 'email, profile, plus.me, http://gdata.youtube.com',
-      prompt: 'select_account'
+      scope: 'email, profile, plus.me, http://gdata.youtube.com, calendar',
+      prompt: 'select_account',
+      access_type: 'offline'
     }
 
   config.omniauth :spotify,
