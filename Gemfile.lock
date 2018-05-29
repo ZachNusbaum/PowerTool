@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ZachNusbaum/PostDmarc.git
-  revision: abb78dc2f6b7a5512e76abaa8d3bfb53d141fe1e
+  revision: 54afc4d6d2336c1d0525c6ee06f809eb2a9af483
   specs:
     PostDmarc (0.1.0)
       faraday
