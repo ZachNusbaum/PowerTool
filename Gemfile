@@ -5,98 +5,99 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.5.1"
 
 # Back-endy
-gem "bootsnap", require: false
-gem "pg"
-gem "puma"
-gem "rack-canonical-host"
-gem "rails", "~> 5.2.0"
-gem "pry-rails"
-gem "chronic"
-gem "faraday"
-gem "faraday_middleware"
+gem "bootsnap", "~> 1.3", require: false
+gem "pg", "~> 1.0"
+gem "puma", "~> 3.11"
+gem "rack-canonical-host", "~> 0.2"
+gem "rails", "~> 5.2"
+gem "pry-rails", "~> 0.3"
+gem "chronic", "~> 0.10"
+gem "faraday", "~> 0.12"
+gem "faraday_middleware", "~> 0.12"
 
 # Front-endy
-gem "autoprefixer-rails"
-gem "bootstrap-sass"
-gem "coffee-rails"
-gem "jquery-rails"
-gem "sass-rails" # Only needed for generator (e.g. rail g controller Users)
-gem "simple_form"
-gem "slim-rails"
-gem "uglifier"
+gem "autoprefixer-rails", "~> 8.5"
+gem "bootstrap-sass", "~> 3.3"
+gem "coffee-rails", "~> 4.2"
+gem "jquery-rails", "~> 4.3"
+gem "sass-rails", "~> 5.0" # Only needed for generator (e.g. rail g controller Users)
+gem "simple_form", "~> 4.0"
+gem "slim-rails", "~> 3.1"
+gem "uglifier", "~> 4.1"
 
 # Tools
-gem "awesome_print"
-gem "rotp"
-gem "active_interaction", "~> 3.6.1"
-gem "devise", "~> 4.4.3"
-gem "money-rails"
+gem "awesome_print", "~> 1.8"
+gem "rotp", "~> 3.3"
+gem "active_interaction", "~> 3.6"
+gem "devise", "~> 4.4"
+gem "money-rails", "~> 1.11"
 
 # Env specific dependencies...
 
 group :production, :acceptance do
-  gem "rack-timeout"
+  gem "rack-timeout", "~> 0.5"
 end
 
 group :development, :test do
-  gem "factory_bot_rails"
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "rspec-rails"
-  gem "rspec_junit_formatter"
-  gem "rubocop", require: false
-  gem "letter_opener"
+  gem "factory_bot_rails", "~> 4.10"
+  gem "better_errors", "~> 2.4"
+  gem "binding_of_caller", "~> 0.8"
+  gem "rspec-rails", "~> 3.7"
+  gem "rspec_junit_formatter", "~> 0.4"
+  gem "rubocop", "~> 0.56", require: false
+  gem "letter_opener", "~> 1.6"
 end
 
 group :development do
-  gem "annotate"
-  gem "dotenv-rails"
-  gem "launchy"
-  gem "listen"
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "spring-watcher-listen"
+  gem "annotate", "~> 2.7"
+  gem "dotenv-rails", "~> 2.4"
+  gem "launchy", "~> 2.4"
+  gem "listen", "~> 3.1"
+  gem "spring", "~> 2.0"
+  gem "spring-commands-rspec", "~> 1.0"
+  gem "spring-watcher-listen", "~> 2.0"
   # gem "guard"
   # gem "guard-rspec", ">= 4.6.5" # Resolves to 1.x without a version constraint. :/
   # gem "guard-livereload"
 end
 
 group :test do
-  gem "capybara"
+  gem "capybara", "~> 3.1"
   # gem "capybara-email"
-  gem "capybara-selenium"
-  gem "simplecov"
+  gem "capybara-selenium", "~> 0.0"
+  gem "simplecov", "~> 0.16"
 end
 
-gem "sidekiq"
-gem "sidekiq-scheduler"
-gem "activeadmin"
+gem "sidekiq", "~> 5.1"
+gem "sidekiq-scheduler", "~> 2.2"
+gem "activeadmin", "~> 1.3"
 
-gem "omniauth"
-gem "omniauth-github"
-gem "omniauth-facebook"
-gem "omniauth-twitter"
-gem "omniauth-google-oauth2"
-gem "ahoy_email"
-gem "ahoy_matey"
-gem "stripe"
-gem "smartystreets_ruby_sdk"
-gem "jwt"
-gem "premailer-rails"
-gem "receipts"
+gem "omniauth", "~> 1.8"
+gem "omniauth-github", "~> 1.1"
+gem "omniauth-facebook", "~> 5.0"
+gem "omniauth-twitter", "~> 1.4"
+gem "omniauth-google-oauth2", "~> 0.5"
+gem "ahoy_email", "~> 0.5"
+gem "ahoy_matey", "~> 2.1"
+gem "stripe", "~> 3.15"
+gem "smartystreets_ruby_sdk", "~> 5.3"
+gem "jwt", "~> 1.5"
+gem "premailer-rails", "~> 1.10"
+gem "receipts", "~> 0.2"
 #gem 'gdpr_rails'
-gem "aws-sdk-s3", require: false
-gem "mini_magick"
-gem 'semantic-ui-sass'
-gem "kaminari"
-gem "pundit"
-gem "octokit"
-gem "koala"
-gem "doorkeeper"
-gem "flutie"
+gem "aws-sdk-s3", "~> 1.13", require: false
+gem "mini_magick", "~> 4.8"
+gem 'semantic-ui-sass', "~> 2.3"
+gem "kaminari", "~> 1.1"
+gem "pundit", "~> 1.1"
+gem "octokit", "~> 4.9"
+gem "koala", "~> 3.0"
+gem "doorkeeper", "~> 4.3"
+gem "flutie", "~> 2.0"
 gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'
-gem "sentry-raven"
-gem 'omniauth-spotify'
-gem "rspotify"
+gem "sentry-raven", "~> 2.7"
+gem 'omniauth-spotify', "~> 0.0"
+gem "rspotify", "~> 2.1"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
-gem 'google-api-client', '~> 0.11', require: 'google/apis'
+gem 'google-api-client', '~> 0.22', require: 'google/apis'
+gem 'attr_encrypted', '~> 3.0'

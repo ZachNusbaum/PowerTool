@@ -566,75 +566,75 @@ PLATFORMS
 DEPENDENCIES
   PostDmarc!
   WordDescriptor!
-  active_interaction (~> 3.6)
-  activeadmin (~> 1.3)
-  ahoy_email (~> 0.5)
-  ahoy_matey (~> 2.1)
-  annotate (~> 2.7)
-  attr_encrypted (~> 3.0)
-  autoprefixer-rails (~> 8.5)
-  awesome_print (~> 1.8)
-  aws-sdk-s3 (~> 1.13)
-  better_errors (~> 2.4)
-  binding_of_caller (~> 0.8)
-  bootsnap (~> 1.3)
-  bootstrap-sass (~> 3.3)
-  capybara (~> 3.1)
-  capybara-selenium (~> 0.0)
-  chronic (~> 0.10)
-  coffee-rails (~> 4.2)
-  devise (~> 4.4)
-  doorkeeper (~> 4.3)
-  dotenv-rails (~> 2.4)
-  factory_bot_rails (~> 4.10)
-  faraday (~> 0.12)
-  faraday_middleware (~> 0.12)
-  flutie (~> 2.0)
-  google-api-client (~> 0.22)
-  jquery-rails (~> 4.3)
-  jwt (~> 1.5)
-  kaminari (~> 1.1)
-  koala (~> 3.0)
-  launchy (~> 2.4)
-  letter_opener (~> 1.6)
-  listen (~> 3.1)
-  mini_magick (~> 4.8)
-  money-rails (~> 1.11)
-  octokit (~> 4.9)
-  omniauth (~> 1.8)
-  omniauth-facebook (~> 5.0)
-  omniauth-github (~> 1.1)
-  omniauth-google-oauth2 (~> 0.5)
-  omniauth-spotify (~> 0.0)
-  omniauth-twitter (~> 1.4)
-  pg (~> 1.0)
-  premailer-rails (~> 1.10)
-  pry-rails (~> 0.3)
-  puma (~> 3.11)
-  pundit (~> 1.1)
-  rack-canonical-host (~> 0.2)
-  rack-timeout (~> 0.5)
-  rails (~> 5.2)
-  receipts (~> 0.2)
-  rotp (~> 3.3)
-  rspec-rails (~> 3.7)
-  rspec_junit_formatter (~> 0.4)
-  rspotify (~> 2.1)
-  rubocop (~> 0.56)
-  sass-rails (~> 5.0)
-  semantic-ui-sass (~> 2.3)
-  sentry-raven (~> 2.7)
-  sidekiq (~> 5.1)
-  sidekiq-scheduler (~> 2.2)
-  simple_form (~> 4.0)
-  simplecov (~> 0.16)
-  slim-rails (~> 3.1)
-  smartystreets_ruby_sdk (~> 5.3)
-  spring (~> 2.0)
-  spring-commands-rspec (~> 1.0)
-  spring-watcher-listen (~> 2.0)
-  stripe (~> 3.15)
-  uglifier (~> 4.1)
+  active_interaction (~> 3.6.1)
+  activeadmin
+  ahoy_email
+  ahoy_matey
+  annotate
+  attr_encrypted (~> 3.0.0)
+  autoprefixer-rails
+  awesome_print
+  aws-sdk-s3
+  better_errors
+  binding_of_caller
+  bootsnap
+  bootstrap-sass
+  capybara
+  capybara-selenium
+  chronic
+  coffee-rails
+  devise (~> 4.4.3)
+  doorkeeper
+  dotenv-rails
+  factory_bot_rails
+  faraday
+  faraday_middleware
+  flutie
+  google-api-client (~> 0.11)
+  jquery-rails
+  jwt
+  kaminari
+  koala
+  launchy
+  letter_opener
+  listen
+  mini_magick
+  money-rails
+  octokit
+  omniauth
+  omniauth-facebook
+  omniauth-github
+  omniauth-google-oauth2
+  omniauth-spotify
+  omniauth-twitter
+  pg
+  premailer-rails
+  pry-rails
+  puma
+  pundit
+  rack-canonical-host
+  rack-timeout
+  rails (~> 5.2.0)
+  receipts
+  rotp
+  rspec-rails
+  rspec_junit_formatter
+  rspotify
+  rubocop
+  sass-rails
+  semantic-ui-sass
+  sentry-raven
+  sidekiq
+  sidekiq-scheduler
+  simple_form
+  simplecov
+  slim-rails
+  smartystreets_ruby_sdk
+  spring
+  spring-commands-rspec
+  spring-watcher-listen
+  stripe
+  uglifier
 
 RUBY VERSION
    ruby 2.5.1p57
