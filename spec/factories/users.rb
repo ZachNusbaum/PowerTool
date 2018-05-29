@@ -7,6 +7,8 @@
 #  current_sign_in_ip     :inet
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  encrypted_pin          :string
+#  encrypted_pin_iv       :string
 #  id                     :bigint(8)        not null, primary key
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
