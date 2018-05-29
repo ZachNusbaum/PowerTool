@@ -100,3 +100,4 @@ gem 'omniauth-spotify'
 gem "rspotify"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
 gem 'google-api-client', '~> 0.11', require: 'google/apis'
+gem 'attr_encrypted', '~> 3.0.0'

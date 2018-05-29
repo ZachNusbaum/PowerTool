@@ -97,6 +97,8 @@ GEM
       activesupport (>= 3.0.0)
     arel (9.0.0)
     ast (2.4.0)
+    attr_encrypted (3.0.3)
+      encryptor (~> 3.0.0)
     autoprefixer-rails (8.5.1)
       execjs
     awesome_print (1.8.0)
@@ -175,6 +177,7 @@ GEM
     dotenv-rails (2.4.0)
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
+    encryptor (3.0.0)
     errbase (0.1.0)
     erubi (1.7.1)
     et-orbi (1.1.2)
@@ -568,6 +571,7 @@ DEPENDENCIES
   ahoy_email
   ahoy_matey
   annotate
+  attr_encrypted (~> 3.0.0)
   autoprefixer-rails
   awesome_print
   aws-sdk-s3
