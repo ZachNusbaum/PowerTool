@@ -37,7 +37,7 @@
 
 class User < ApplicationRecord
   devise :two_factor_authenticatable,
-         :otp_secret_encryption_key => ENV['2FA_KEY']
+         :otp_secret_encryption_key => ENV['TFA_KEY']
 
   before_create :set_member_id
   attr_encrypted :pin, key: Rails.application.credentials.encrypted_pin_key
