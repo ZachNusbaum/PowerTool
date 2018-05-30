@@ -101,3 +101,6 @@ gem "rspotify", "~> 2.1"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
 gem 'google-api-client', '~> 0.22', require: 'google/apis'
 gem 'attr_encrypted', '~> 3.0'
+gem 'devise-two-factor'
+gem 'chunky_png'
+gem 'rqrcode'

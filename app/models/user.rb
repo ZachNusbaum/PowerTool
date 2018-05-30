@@ -2,27 +2,31 @@
 #
 # Table name: users
 #
-#  created_at             :datetime         not null
-#  current_sign_in_at     :datetime
-#  current_sign_in_ip     :inet
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  encrypted_pin          :string
-#  encrypted_pin_iv       :string
-#  id                     :bigint(8)        not null, primary key
-#  last_sign_in_at        :datetime
-#  last_sign_in_ip        :inet
-#  member_id              :string
-#  name                   :string
-#  provider               :string
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string
-#  role                   :integer          default("basic"), not null
-#  send_daily_stories     :boolean          default(FALSE), not null
-#  sign_in_count          :integer          default(0), not null
-#  uid                    :string
-#  updated_at             :datetime         not null
+#  created_at                :datetime         not null
+#  current_sign_in_at        :datetime
+#  current_sign_in_ip        :inet
+#  email                     :string           default(""), not null
+#  encrypted_otp_secret      :string
+#  encrypted_otp_secret_iv   :string
+#  encrypted_otp_secret_salt :string
+#  encrypted_password        :string           default(""), not null
+#  encrypted_pin             :string
+#  encrypted_pin_iv          :string
+#  id                        :bigint(8)        not null, primary key
+#  last_sign_in_at           :datetime
+#  last_sign_in_ip           :inet
+#  member_id                 :string
+#  name                      :string
+#  otp_required_for_login    :boolean
+#  provider                  :string
+#  remember_created_at       :datetime
+#  reset_password_sent_at    :datetime
+#  reset_password_token      :string
+#  role                      :integer          default("basic"), not null
+#  send_daily_stories        :boolean          default(FALSE), not null
+#  sign_in_count             :integer          default(0), not null
+#  uid                       :string
+#  updated_at                :datetime         not null
 #
 # Indexes
 #
@@ -32,12 +36,15 @@
 #
 
 class User < ApplicationRecord
+  devise :two_factor_authenticatable,
+         :otp_secret_encryption_key => ENV['2FA_KEY']
+
   before_create :set_member_id
   attr_encrypted :pin, key: Rails.application.credentials.encrypted_pin_key
   # after_create :send_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable,
          omniauth_providers: %i[github facebook twitter google_oauth2 spotify]
@@ -95,6 +102,11 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+
+  def enable_two_factor!
+    self.otp_secret = User.generate_otp_secret
+    self.save
   end
 
   private

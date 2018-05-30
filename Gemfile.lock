@@ -144,6 +144,7 @@ GEM
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
+    chunky_png (1.3.10)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -167,6 +168,13 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-two-factor (1.0.0)
+      activemodel
+      activesupport
+      attr_encrypted
+      devise
+      rails
+      rotp
     diff-lcs (1.3)
     docile (1.3.1)
     domain_name (0.5.20180417)
@@ -433,6 +441,8 @@ GEM
       netrc (~> 0.8)
     retriable (3.1.1)
     rotp (3.3.1)
+    rqrcode (0.10.1)
+      chunky_png (~> 1.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -582,8 +592,10 @@ DEPENDENCIES
   capybara (~> 3.1)
   capybara-selenium (~> 0.0)
   chronic (~> 0.10)
+  chunky_png
   coffee-rails (~> 4.2)
   devise (~> 4.4)
+  devise-two-factor
   doorkeeper (~> 4.3)
   dotenv-rails (~> 2.4)
   factory_bot_rails (~> 4.10)
@@ -617,6 +629,7 @@ DEPENDENCIES
   rails (~> 5.2)
   receipts (~> 0.2)
   rotp (~> 3.3)
+  rqrcode
   rspec-rails (~> 3.7)
   rspec_junit_formatter (~> 0.4)
   rspotify (~> 2.1)
