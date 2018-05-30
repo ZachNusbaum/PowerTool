@@ -104,6 +104,11 @@ class User < ApplicationRecord
     end
   end
 
+  def enable_two_factor!
+    self.otp_secret = User.generate_otp_secret
+    self.save
+  end
+
   private
 
   def send_email

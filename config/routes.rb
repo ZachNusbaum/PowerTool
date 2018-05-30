@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+
   namespace :users do
     get 'services/index'
+    get 'two_factor', to: 'two_factor#show'
+    post 'two_factor', to: 'two_factor#enable'
   end
   # Add routes for the doorkeeper gem
   use_doorkeeper do
