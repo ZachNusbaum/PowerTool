@@ -1,0 +1,14 @@
+.ui.six.columns.centered.grid
+  .row
+    .six.wide.column
+      .ui.blue.attached.message Request a signature
+      .ui.attached.segment
+        = form_with model: @signature, url: utilities_signature_requests_path, local: true, class: 'ui form' do |f|
+          .field
+            = f.label :recipient_email
+            = f.text_field :recipient_email
+          .field
+            = f.label :description
+            = f.text_area :description
+          .field
+            = f.submit 'Send Request', class: 'ui small green button'

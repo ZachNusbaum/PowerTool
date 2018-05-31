@@ -17,6 +17,12 @@
 
         .divider
 
+        .header Signatures
+        = link_to 'New Request', new_utilities_signature_request_path, class: 'item'
+        = link_to 'Your Submissions', utilities_signature_requests_path, class: 'item'
+
+        .divider
+
         .header Documents
         = link_to 'New Delivery', new_document_delivery_path, class: 'item'
 

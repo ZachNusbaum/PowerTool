@@ -5,6 +5,12 @@ Rails.application.routes.draw do
     get 'two_factor', to: 'two_factor#show'
     post 'two_factor', to: 'two_factor#enable'
   end
+
+  namespace :utilities do
+    resources :signature_requests, only: [:index, :new, :create, :show] do
+      patch '/submit', to: 'signature_requests#submit'
+    end
+  end
   # Add routes for the doorkeeper gem
   use_doorkeeper do
     controllers :applications => 'oauth/applications'

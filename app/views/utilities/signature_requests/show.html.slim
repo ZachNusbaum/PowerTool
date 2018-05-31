@@ -1,0 +1,34 @@
+- if @signature.signed_at.present?
+  h4 Signed!
+  #signature
+  javascript:
+    $(document).ready(function() {
+      $('#signature').jSignature();
+      $("#signature").jSignature("disable");
+      $('#signature').jSignature("setData", #{{@signature.raw_data}}, "native");
+    });
+- else
+  .ui.six.column.centered.grid
+    .ui.two.column.row
+      .ui.blue.message
+        | Please sign below
+    .ui.two.column.row
+      .ui.segment
+        = form_with model: @signature, url: utilities_signature_request_submit_path(@signature), local: true do |f|
+          #signature
+          = f.hidden_field :raw_data
+          hr
+          = f.submit 'Save Signature', class: 'ui small green button'
+        = link_to "Clear", '#', id: 'clear_signature'
+
+
+  javascript:
+    $(document).ready(function() {
+      signature_pad = $("#signature").jSignature();
+      $('#clear_signature').on('click', function() {
+        signature_pad.jSignature("reset");
+      });
+      signature_pad.bind('change', function(e) {
+        $('#signature_raw_data').val(JSON.stringify(signature_pad.jSignature("getData", "native")));
+      })
+    });
