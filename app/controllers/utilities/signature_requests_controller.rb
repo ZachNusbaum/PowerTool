@@ -26,6 +26,7 @@ class Utilities::SignatureRequestsController < ApplicationController
     @signature = Signature.find_by_uuid(params[:signature_request_id])
     if @signature.update(submit_signature_params)
       @signature.update(signed_at: DateTime.now, signed_by: current_user.id)
+      ahoy.track 'Signature submitted', uuid: @signature.uuid
       redirect_to utilities_signature_request_path(@signature.uuid),
         notice: 'Success!'
     end
