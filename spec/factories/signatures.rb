@@ -9,6 +9,8 @@
 #  recipient_email :string
 #  signed_at       :datetime
 #  signed_by       :integer
+#  signer_name     :string
+#  signer_title    :string
 #  updated_at      :datetime         not null
 #  user_id         :bigint(8)
 #  uuid            :uuid

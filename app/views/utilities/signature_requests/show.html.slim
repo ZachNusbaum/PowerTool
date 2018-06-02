@@ -1,3 +1,5 @@
+h1 Signature Request
+hr
 - if @signature.signed_at.present?
   h4 Signed!
   #signature
@@ -13,8 +15,28 @@
       .ui.blue.message
         | Please sign below
     .ui.two.column.row
+      p
+        b #{@signature.user.email} has requested your signature.
+    .ui.two.column.row
+      p
+        em "#{@signature.description}"
+
+    .ui.two.column.row
       .ui.segment
-        = form_with model: @signature, url: utilities_signature_request_submit_path(@signature), local: true do |f|
+        - if @submission.errors.any?
+          .ui.yellow.message
+            ul
+              - @submission.errors.full_messages.each do |m|
+                li = m
+        = form_with model: @submission, url: utilities_signature_request_submit_path(@signature), local: true, class: 'ui form' do |f|
+          .field
+            = f.label :signer_name, 'Your Name'
+            = f.text_field :signer_name
+          .field
+            = f.label :signer_title, 'Your Title'
+            = f.text_field :signer_title
+          hr
+          p.ui.small Draw Signature Below
           #signature
           = f.hidden_field :raw_data
           hr
@@ -24,7 +46,7 @@
 
   javascript:
     $(document).ready(function() {
-      signature_pad = $("#signature").jSignature();
+      signature_pad = $("#signature").jSignature({"height": 150, "width": 350});
       $('#clear_signature').on('click', function() {
         signature_pad.jSignature("reset");
       });

@@ -22,16 +22,18 @@ class Utilities::SignatureRequestsController < ApplicationController
 
   def show
     @signature = Signature.find_by_uuid(params[:id])
+    @submission = Signatures::Submit.new
   end
 
   def submit
     @signature = Signature.find_by_uuid(params[:signature_request_id])
-    if @signature.update(submit_signature_params)
-      @signature.update(signed_at: DateTime.now, signed_by: current_user.id)
+    @submission = Signatures::Submit.run(submit_signature_params)
+    if @submission.valid?
       ahoy.track 'Signature submitted', uuid: @signature.uuid
-      SignaturesMailer.completed(@signature).deliver_later!
       redirect_to utilities_signature_request_path(@signature.uuid),
         notice: 'Success!'
+    else
+      render :show
     end
   end
 
@@ -42,6 +44,6 @@ class Utilities::SignatureRequestsController < ApplicationController
   end
 
   def submit_signature_params
-    params.require(:signature).permit(:raw_data)
+    params.require(:signature).permit(:raw_data, :signer_name, :signer_title).merge(signature: @signature, signer: current_user)
   end
 end
