@@ -28,7 +28,8 @@ hr
             ul
               - @submission.errors.full_messages.each do |m|
                 li = m
-        = form_with model: @submission, url: utilities_signature_request_submit_path(@signature), local: true, class: 'ui form' do |f|
+        = form_with model: @submission, url: utilities_signature_request_submit_path(@signature),
+                local: true, class: 'ui form', method: :patch do |f|
           .field
             = f.label :signer_name, 'Your Name'
             = f.text_field :signer_name
