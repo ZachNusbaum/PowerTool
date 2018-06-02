@@ -1,0 +1,18 @@
+html
+  head
+    title Signature Request
+    scss:
+      .signing_link {
+        color: red;
+      }
+
+  body
+    h1 Signature Request
+    hr
+    p Hello,
+    p Your signature has been requested.
+    p DESCRIPTION: #{@request.description}
+    p TOKEN: #{@request.uid}
+    hr
+    h2
+      .signing_link = link_to 'Click Here to Sign', utilities_signature_request_url(@request.uid)
