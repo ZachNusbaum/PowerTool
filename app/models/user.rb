@@ -60,6 +60,7 @@ class User < ApplicationRecord
   has_many :document_deliveries, class_name: "Document::Delivery"
   has_many :services, class_name: 'Users::Service'
   has_many :signatures, class_name: 'Signature', foreign_key: 'signed_by'
+  has_many :sent_signatures, class_name: 'Signature', foreign_key: 'user_id'
   has_many :access_grants, class_name: "Doorkeeper::AccessGrant",
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks

@@ -3,6 +3,11 @@
     .six.wide.column
       .ui.blue.attached.message Request a signature
       .ui.attached.segment
+        - if @signature.errors.any?
+          .ui.yellow.message
+            ul
+              - @signature.errors.full_messages.each do |m|
+                li = m
         = form_with model: @signature, url: utilities_signature_requests_path, local: true, class: 'ui form' do |f|
           .field
             = f.label :recipient_email

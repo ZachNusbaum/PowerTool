@@ -11,7 +11,9 @@ class Utilities::SignatureRequestsController < ApplicationController
 
   def create
     @signature = Signature.new(new_signature_params)
-    if @signature.save!
+    @signature.user = current_user
+    if @signature.save
+      SignaturesMailer.new_request(@signature).deliver_later!
       redirect_to utilities_signature_request_path(@signature), notice: 'Request sent.'
     else
       render :new

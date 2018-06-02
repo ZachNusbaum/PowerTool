@@ -10,7 +10,16 @@
 #  signed_at       :datetime
 #  signed_by       :integer
 #  updated_at      :datetime         not null
+#  user_id         :bigint(8)
 #  uuid            :uuid
+#
+# Indexes
+#
+#  index_signatures_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 
 FactoryBot.define do

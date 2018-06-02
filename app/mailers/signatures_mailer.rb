@@ -6,14 +6,14 @@ class SignaturesMailer < ApplicationMailer
   #
   #   en.signatures_mailer.new_request.subject
   #
-  def new_request(request, sender_email = nil)
+  def new_request(request)
     @request = request
 
-    mail to: recipient_email,
+    mail to: @request.recipient_email,
          subject: 'Your signature is requested',
          from: 'signature-mail@zdnenterprises.com',
          reply: 'web@zdnmail.com',
-         bcc: sender_email
+         bcc: @request.user.email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

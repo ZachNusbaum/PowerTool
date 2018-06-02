@@ -5,14 +5,18 @@ html
       .signing_link {
         color: red;
       }
+      .message {
+        color: green;
+        font-style: bold;
+      }
 
   body
     h1 Signature Request
     hr
     p Hello,
-    p Your signature has been requested.
-    p DESCRIPTION: #{@request.description}
-    p TOKEN: #{@request.uid}
+    p.message Your signature has been requested.
+    p <strong>DESCRIPTION:</strong> #{@request.description}
+    p <strong>TOKEN:</strong> #{@request.uuid}
     hr
     h2
-      .signing_link = link_to 'Click Here to Sign', utilities_signature_request_url(@request.uid)
+      .signing_link = link_to 'Click Here to Sign', utilities_signature_request_url(@request.uuid)
