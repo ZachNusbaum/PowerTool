@@ -44,6 +44,6 @@ class Utilities::SignatureRequestsController < ApplicationController
   end
 
   def submit_signature_params
-    params.require(:signature).permit(:raw_data, :signer_name, :signer_title).merge(signature: @signature, signer: current_user)
+    params.require(:signatures_submit).permit(:raw_data, :signer_name, :signer_title).merge(signature: @signature, signer: current_user)
   end
 end
