@@ -1,2 +1,7 @@
-h1 Signatures#completed
-p = @greeting + ", find me in app/views/signatures_mailer/completed.html.slim"
+h1 Signature Request Completed
+hr
+p Hello #{@request.user.name},
+p Your signature request with Token: (#{@request.uuid}) has been completed by #{@request.signer.email}.
+p The signature was submitted at #{@request.signed_at}.
+hr
+h2 = link_to 'View Signature', utilities_signature_request_url(@request.uuid)

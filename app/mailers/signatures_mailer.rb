@@ -21,9 +21,13 @@ class SignaturesMailer < ApplicationMailer
   #
   #   en.signatures_mailer.completed.subject
   #
-  def completed
-    @greeting = "Hi"
+  def completed(signature)
+    @request = signature
 
-    mail to: "to@example.org"
+    mail to: @request.user.email,
+         from: 'signature-mail@zdnenterprises.com',
+         reply: 'web@zachapps.com',
+         subject: 'Signature request completed',
+         cc: @request.signer.email
   end
 end

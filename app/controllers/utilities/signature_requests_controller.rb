@@ -29,6 +29,7 @@ class Utilities::SignatureRequestsController < ApplicationController
     if @signature.update(submit_signature_params)
       @signature.update(signed_at: DateTime.now, signed_by: current_user.id)
       ahoy.track 'Signature submitted', uuid: @signature.uuid
+      SignaturesMailer.completed(@signature).deliver_later!
       redirect_to utilities_signature_request_path(@signature.uuid),
         notice: 'Success!'
     end
