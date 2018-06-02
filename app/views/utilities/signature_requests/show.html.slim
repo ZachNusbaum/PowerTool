@@ -31,7 +31,7 @@
       signature_pad.bind('change', function(e) {
         $('#signature_raw_data').val(
             JSON.stringify(
-                signature_pad.jSignature("getData", "base30")[0] +
+                signature_pad.jSignature("getData", "base30")[0] + "," +
                 signature_pad.jSignature("getData", "base30")[1]
             )
         );
