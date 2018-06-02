@@ -5,7 +5,7 @@
 #  created_at      :datetime         not null
 #  description     :text
 #  id              :bigint(8)        not null, primary key
-#  raw_data        :jsonb
+#  raw_data        :text
 #  recipient_email :string
 #  signed_at       :datetime
 #  signed_by       :integer

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_004933) do
+ActiveRecord::Schema.define(version: 2018_06_02_210708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -277,12 +277,12 @@ ActiveRecord::Schema.define(version: 2018_05_31_004933) do
   create_table "signatures", force: :cascade do |t|
     t.uuid "uuid"
     t.string "recipient_email"
-    t.jsonb "raw_data"
     t.datetime "signed_at"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "signed_by"
+    t.text "raw_data"
   end
 
   create_table "users", force: :cascade do |t|

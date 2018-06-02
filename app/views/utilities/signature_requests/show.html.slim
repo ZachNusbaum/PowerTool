@@ -5,7 +5,7 @@
     $(document).ready(function() {
       $('#signature').jSignature();
       $("#signature").jSignature("disable");
-      $('#signature').jSignature("setData", #{{@signature.raw_data}}, "native");
+      $('#signature').jSignature("importData", #{{@signature.raw_data}}, "base30");
     });
 - else
   .ui.six.column.centered.grid
@@ -29,6 +29,11 @@
         signature_pad.jSignature("reset");
       });
       signature_pad.bind('change', function(e) {
-        $('#signature_raw_data').val(JSON.stringify(signature_pad.jSignature("getData", "native")));
+        $('#signature_raw_data').val(
+            JSON.stringify(
+                signature_pad.jSignature("getData", "base30")[0] +
+                signature_pad.jSignature("getData", "base30")[1]
+            )
+        );
       })
     });
