@@ -10,11 +10,11 @@ class Signatures::Submit < ActiveInteraction::Base
   validates :raw_data, presence: { message: 'Please draw a signature' }
 
   def execute
-    sig = signature.update(
+    sig = signature.update!(
                  raw_data: raw_data,
                  signer_name: signer_name,
                  signer_title: signer_title,
-                 signer: signer,
+                 signed_by: signer.id,
                  signed_at: DateTime.now
     )
     errors.merge!(signature.errors) if signature.errors.any?

@@ -24,7 +24,7 @@ hr
     .ui.two.column.row
       .ui.segment
         p
-          b #{@signature.user.email} has requested your signature.
+          b #{@signature.user.try(:email)} has requested your signature.
         p
           em "#{@signature.description}"
 

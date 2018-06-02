@@ -28,7 +28,7 @@ class Signature < ApplicationRecord
   before_save :set_uuid
 
   belongs_to :signer, foreign_key: 'signed_by', optional: true, class_name: 'User'
-  belongs_to :user
+  belongs_to :user, optional: true
 
   attribute :sender_email, :string, default: nil
 
