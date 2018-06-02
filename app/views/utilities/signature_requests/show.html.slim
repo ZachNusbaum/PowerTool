@@ -15,11 +15,11 @@ hr
       .ui.blue.message
         | Please sign below
     .ui.two.column.row
-      p
-        b #{@signature.user.email} has requested your signature.
-    .ui.two.column.row
-      p
-        em "#{@signature.description}"
+      .ui.segment
+        p
+          b #{@signature.user.email} has requested your signature.
+        p
+          em "#{@signature.description}"
 
     .ui.two.column.row
       .ui.segment
