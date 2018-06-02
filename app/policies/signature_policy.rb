@@ -6,9 +6,9 @@ class SignaturePolicy < ApplicationPolicy
   def show?
     if User.exists?(email: record.recipient_email)
       existing = User.find_by_email(record.recipient_email)
-      record.user == user || user == existing || user.admin?
+      record.user == user || user == existing || user.admin? || user == record.signer
     else
-      record.user == user || record.signer.nil? || user.admin?
+      record.user == user || record.signer.nil? || user.admin? || record.signer == user
     end
   end
 
