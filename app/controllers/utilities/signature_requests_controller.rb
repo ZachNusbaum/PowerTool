@@ -36,6 +36,7 @@ class Utilities::SignatureRequestsController < ApplicationController
     @submission = Signatures::Submit.run(submit_signature_params)
     if @submission.valid?
       ahoy.track 'Signature submitted', uuid: @signature.uuid
+      SignaturesMailer.completed(@signature).deliver_later!
       redirect_to utilities_signature_request_path(@signature.uuid),
         notice: 'Success!'
     else

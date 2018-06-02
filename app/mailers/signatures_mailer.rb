@@ -28,6 +28,6 @@ class SignaturesMailer < ApplicationMailer
          from: 'signature-mail@zdnenterprises.com',
          reply: 'web@zachapps.com',
          subject: 'Signature request completed',
-         cc: @request.signer.email
+         cc: [@request.signer.email, @request.recipient_email]
   end
 end
