@@ -112,6 +112,11 @@ Rails.application.routes.draw do
       scope :news do
         get 'bookmarks', to: 'news#bookmarks'
       end
+
+      scope :signatures do
+        get '/:uuid', to: 'signatures#show'
+        post '/', to: 'signatures#create'
+      end
     end
   end
 end
