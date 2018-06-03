@@ -16,7 +16,7 @@
      mourner.github.com/simplify-js
 
      */
-    ;(function(a,b){function c(a,b){var c=a.x-b.x,d=a.y-b.y;return c*c+d*d}function d(a,b,c){var d=b.x,e=b.y,f=c.x-d,g=c.y-e,h;if(f!==0||g!==0)h=((a.x-d)*f+(a.y-e)*g)/(f*f+g*g),h>1?(d=c.x,e=c.y):h>0&&(d+=f*h,e+=g*h);return f=a.x-d,g=a.y-e,f*f+g*g}function e(a,b){var d,e=a.length,f,g=a[0],h=[g];for(d=1;d<e;d++)f=a[d],c(f,g)>b&&(h.push(f),g=f);return g!==f&&h.push(f),h}function f(a,c){var e=a.length,f=typeof Uint8Array!=b+""?Uint8Array:Array,g=new f(e),h=0,i=e-1,j,k,l,m,n=[],o=[],p=[];g[h]=g[i]=1;while(i){k=0;for(j=h+1;j<i;j++)l=d(a[j],a[h],a[i]),l>k&&(m=j,k=l);k>c&&(g[m]=1,n.push(h),o.push(m),n.push(m),o.push(i)),h=n.pop(),i=o.pop()}for(j=0;j<e;j++)g[j]&&p.push(a[j]);return p}"use strict";var g=typeof exports!=b+""?exports:a;g.simplify=function(a,c,d){var g=c!==b?c*c:1;return d||(a=e(a,g)),a=f(a,g),a}})(window);
+    ;(function(a,b){function c(a,b){var c=a.x-b.x,d=a.y-b.y;return c*c+d*d}function d(a,b,c){var d=b.x,e=b.y,f=c.x-d,g=c.y-e,h;if(f!==0||g!==0)h=((a.x-d)*f+(a.y-e)*g)/(f*f+g*g),h>1?(d=c.x,e=c.y):h>0&&(d+=f*h,e+=g*h);return f=a.x-d,g=a.y-e,f*f+g*g}function e(a,b){var d,e=a.length,f,g=a[0],h=[g];for(d=1;d<e;d++)f=a[d],c(f,g)>b&&(h.push(f),g=f);return g!==f&&h.push(f),h}function f(a,c){var e=a.length,f=typeof Uint8Array!=b+""?Uint8Array:Array,g=new f(e),h=0,i=e-1,j,k,l,m,n=[],o=[],p=[];g[h]=g[i]=1;while(i){k=0;for(j=h+1;j<i;j++)l=d(a[j],a[h],a[i]),l>k&&(m=j,k=l);k>c&&(g[m]=1,n.push(h),o.push(m),n.push(m),o.push(i)),h=n.pop(),i=o.pop()}for(j=0;j<e;j++)g[j]&&p.push(a[j]);return p}"use strict";var g=a;g.simplify=function(a,c,d){var g=c!==b?c*c:1;return d||(a=e(a,g)),a=f(a,g),a}})(window);
 
 
     /**
@@ -335,7 +335,27 @@
         return newstroke
     }
 
-    function compressstrokes(data){
+    // generate SVG style from settings
+    function styleFromSettings(settings){
+        var styles = [];
+        var meta = [
+            // ["style attr", "key in settings", "default value"]
+            ["fill", undefined, "none"],
+            ["stroke", "color", "#000000"],
+            ["stroke-width", "lineWidth", 2],
+            ["stroke-linecap", undefined, "round"],
+            ["stroke-linejoin", undefined, "round"]
+        ];
+        for (var i = meta.length - 1; i >= 0; i--){
+            var attr = meta[i][0]
+                , key = meta[i][1]
+                , defaultVal = meta[i][2];
+            styles.push(attr + '="' + (key in settings && settings[key] ? settings[key] : defaultVal) + '"');
+        }
+        return styles.join(' ');
+    }
+
+    function compressstrokes(data, settings){
         'use strict'
         var answer = [
             '<?xml version="1.0" encoding="UTF-8" standalone="no"?>'
@@ -398,7 +418,7 @@
 
         for(i = 0, l = simplifieddata.length; i < l; i++){
             stroke = simplifieddata[i]
-            answer.push('<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="'+ addstroke(stroke, shiftx, shifty) + '"/>')
+            answer.push('<path ' + styleFromSettings(settings) + ' d="'+ addstroke(stroke, shiftx, shifty) + '"/>')
         }
         answer.push('</svg>')
         return answer.join('')
@@ -452,13 +472,14 @@
     }
 
     var unencodedmime = 'image/svg+xml'
-    function getUnencodedSVG(data){
-        return [unencodedmime , compressstrokes(data)]
+    function getUnencodedSVG(data, settings){
+        return [unencodedmime , compressstrokes(data, settings)];
     }
 
     var base64encodedmime = 'image/svg+xml;base64'
-    function getBase64encodedSVG(data){
-        return [base64encodedmime , btoa( compressstrokes(data) )]
+    function getBase64encodedSVG(data, settings){
+
+        return [base64encodedmime , btoa( compressstrokes(data, settings) )];
     }
 
     function Initializer($){
