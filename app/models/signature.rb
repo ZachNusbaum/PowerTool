@@ -27,6 +27,8 @@
 class Signature < ApplicationRecord
   before_save :set_uuid
 
+  has_many_attached :documents
+
   belongs_to :signer, foreign_key: 'signed_by', optional: true, class_name: 'User'
   belongs_to :user, optional: true
 

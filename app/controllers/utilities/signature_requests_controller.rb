@@ -47,7 +47,7 @@ class Utilities::SignatureRequestsController < ApplicationController
   private
 
   def new_signature_params
-    params.require(:signature).permit(:recipient_email, :description)
+    params.require(:signature).permit(:recipient_email, :description, documents: [])
   end
 
   def submit_signature_params
