@@ -38,6 +38,13 @@ class Signature < ApplicationRecord
     self.uuid
   end
 
+  def to_svg
+    if raw_data.present?
+      url = raw_data.split(',')[1]
+      Signatures::Base30.new(url).to_svg
+    end
+  end
+
   private
 
   def set_uuid

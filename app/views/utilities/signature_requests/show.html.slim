@@ -3,12 +3,12 @@ hr
 - if @signature.signed_at.present?
   h4 Signed!
   #signature
-  #sig-svg
+  #sig-svg == @signature.to_svg
   p: b = @signature.signer_name
   p: em = @signature.signer_title
   br
   p = @signature.signed_at.strftime('%b %d, %Y - %I:%M %p')
-  javascript:
+  /javascript:
     $(document).ready(function() {
       $('#signature').jSignature();
       $("#signature").jSignature("disable");
@@ -60,10 +60,8 @@ hr
       });
       signature_pad.bind('change', function(e) {
         $('#signatures_submit_raw_data').val(
-            JSON.stringify(
                 signature_pad.jSignature("getData", "base30")[0] + "," +
                 signature_pad.jSignature("getData", "base30")[1]
-            )
         );
       })
     });
