@@ -65,3 +65,9 @@ hr
         );
       })
     });
+- if @signature.documents.any?
+  hr
+  h4 Attached Documents
+  ul
+    - @signature.documents.each do |document|
+      li = link_to document.filename, url_for(document), target: '_blank'
