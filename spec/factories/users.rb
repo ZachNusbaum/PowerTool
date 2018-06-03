@@ -17,6 +17,7 @@
 #  last_sign_in_ip           :inet
 #  member_id                 :string
 #  name                      :string
+#  otp_backup_codes          :string           is an Array
 #  otp_required_for_login    :boolean
 #  provider                  :string
 #  remember_created_at       :datetime

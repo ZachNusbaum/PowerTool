@@ -1,10 +1,10 @@
 h2
   | Log in
 = form_for(resource, as: resource_name, url: users_pre_otp_path, method: :post, remote: true, html: {id: "step-1", class: 'ui form'}) do |f|
-  .input
+  .field
     = f.label :email
     = f.email_field :email, autofocus: true, placeholder: 'Email Address'
-  .input
+  .field
     = f.submit "Next", class: 'ui blue button'
 
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "d-none ui form", id: "step-2" }) do |f|

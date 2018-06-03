@@ -592,6 +592,7 @@ DEPENDENCIES
   autoprefixer-rails (~> 8.5)
   awesome_print (~> 1.8)
   aws-sdk-s3 (~> 1.13)
+  bcrypt
   better_errors (~> 2.4)
   binding_of_caller (~> 0.8)
   bootsnap (~> 1.3)

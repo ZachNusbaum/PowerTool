@@ -24,6 +24,7 @@ gem "sass-rails", "~> 5.0" # Only needed for generator (e.g. rail g controller U
 gem "simple_form", "~> 4.0"
 gem "slim-rails", "~> 3.1"
 gem "uglifier", "~> 4.1"
+gem "bcrypt"
 
 # Tools
 gem "awesome_print", "~> 1.8"
