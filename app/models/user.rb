@@ -37,6 +37,7 @@
 
 class User < ApplicationRecord
   devise :two_factor_authenticatable,
+         :two_factor_backupable,
          :otp_secret_encryption_key => ENV['TFA_KEY']
 
   before_create :set_member_id
