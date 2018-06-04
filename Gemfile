@@ -63,7 +63,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara", "~> 3.1"
+  gem "capybara", "~> 3.2"
   # gem "capybara-email"
   gem "capybara-selenium", "~> 0.0"
   gem "simplecov", "~> 0.16"
