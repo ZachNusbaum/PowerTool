@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_012203) do
+ActiveRecord::Schema.define(version: 2018_06_06_213141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -194,6 +194,23 @@ ActiveRecord::Schema.define(version: 2018_06_03_012203) do
     t.datetime "updated_at", null: false
     t.string "batch_token"
     t.index ["token"], name: "index_news_top_stories_on_token", unique: true
+  end
+
+  create_table "notifications", id: :serial, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "actor_id"
+    t.string "notify_type", null: false
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "second_target_type"
+    t.integer "second_target_id"
+    t.string "third_target_type"
+    t.integer "third_target_id"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "notify_type"], name: "index_notifications_on_user_id_and_notify_type"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|

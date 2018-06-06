@@ -13,30 +13,30 @@
       .menu
         
         .header Parsers
-        = link_to 'Gym Logs', new_parsers_gym_log_path, class: 'item'
+        = link_to 'Gym Logs', main_app.new_parsers_gym_log_path, class: 'item'
 
         .divider
 
         .header Signatures
-        = link_to 'New Request', new_utilities_signature_request_path, class: 'item'
-        = link_to 'Your Submissions', utilities_signature_requests_path, class: 'item'
+        = link_to 'New Request', main_app.new_utilities_signature_request_path, class: 'item'
+        = link_to 'Your Submissions', main_app.utilities_signature_requests_path, class: 'item'
 
         .divider
 
         .header Documents
-        = link_to 'New Delivery', new_document_delivery_path, class: 'item'
+        = link_to 'New Delivery', main_app.new_document_delivery_path, class: 'item'
 
         .divider
 
         .header DMARC
-        = link_to 'Your Accounts', emails_dmarc_accounts_path, class: 'item'
+        = link_to 'Your Accounts', main_app.emails_dmarc_accounts_path, class: 'item'
 
         .divider
 
         .header Words
-        = link_to 'Adjective Finder', words_find_adjectives_path,
+        = link_to 'Adjective Finder', main_app.words_find_adjectives_path,
           class: 'item'
-        = link_to 'Trigger Word Finder', words_find_triggers_path,
+        = link_to 'Trigger Word Finder', main_app.words_find_triggers_path,
           class: 'item'
 
 
@@ -47,7 +47,7 @@
       i.dropdown.icon
       .menu
         .header Money Requests
-        = link_to 'New', new_charges_money_request_path, class: 'item'
+        = link_to 'New', main_app.new_charges_money_request_path, class: 'item'
 
 
 
@@ -56,27 +56,29 @@
       i.dropdown.icon
       .menu
         .header Top Stories
-        = link_to 'View All', news_top_stories_path, class: 'item'
-        = link_to 'View Bookmarked', bookmarks_stories_path, class: 'item'
-        = link_to 'View Sources', news_sources_path, class: 'item'
+        = link_to 'View All', main_app.news_top_stories_path, class: 'item'
+        = link_to 'View Bookmarked', main_app.bookmarks_stories_path, class: 'item'
+        = link_to 'View Sources', main_app.news_sources_path, class: 'item'
 
 
     .ui.right.inverted.menu
       - if user_signed_in?
+        = link_to pluralize(Notification.unread_count(current_user), "Notification"),
+                notifications_path, class: 'item'
         .ui.simple.dropdown.item
           = current_user.name
           i.dropdown.icon
           .menu
             .header = current_user.name
-            = link_to 'Edit Profile', edit_user_registration_path, class: 'item'
-            = link_to 'Connected Accounts', users_services_path, class: 'item'
-            = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'item'
+            = link_to 'Edit Profile', main_app.edit_user_registration_path, class: 'item'
+            = link_to 'Connected Accounts', main_app.users_services_path, class: 'item'
+            = link_to 'Log out', main_app.destroy_user_session_path, method: :delete, class: 'item'
             .divider
             .header External Apps
             = link_to 'Authorized Applications',
-              oauth_authorized_applications_path, class: 'item'
-            = link_to 'Your OAuth2 Keys', oauth_applications_path, class: 'item'
+              main_app.oauth_authorized_applications_path, class: 'item'
+            = link_to 'Your OAuth2 Keys', main_app.oauth_applications_path, class: 'item'
 
       - else
-        = link_to 'Sign in', new_user_session_path, class: 'item'
+        = link_to 'Sign in', main_app.new_user_session_path, class: 'item'
 

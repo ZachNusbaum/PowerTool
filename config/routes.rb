@@ -105,7 +105,9 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
-  
+
+  mount Notifications::Engine => "/notifications"
+
   # Terms of Service
   get '/terms', to: 'pages#terms'
   # Privacy Policy

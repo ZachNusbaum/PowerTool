@@ -17,6 +17,7 @@ class Utilities::SignatureRequestsController < ApplicationController
     authorize @signature
     @signature.user = current_user
     if @signature.save
+      send_notifications
       SignaturesMailer.new_request(@signature).deliver_later!
       redirect_to utilities_signature_request_path(@signature), notice: 'Request sent.'
     else
@@ -56,5 +57,17 @@ class Utilities::SignatureRequestsController < ApplicationController
 
   def not_authorized
     redirect_to utilities_signature_requests_path, alert: 'Not authorized.'
+  end
+
+  def send_notifications
+    recipient_user = User.find_by_email(@signature.recipient_email)
+    if recipient_user
+      Notification.create(
+                      notify_type: 'signature',
+                      target: @signature,
+                      actor: @signature.user,
+                      user: recipient_user
+      )
+    end
   end
 end
