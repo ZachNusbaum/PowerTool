@@ -16,7 +16,7 @@ GIT
 PATH
   remote: /Users/zachnusbaum/Rails/OmniauthAccessGate
   specs:
-    OmniauthAccessGate (0.1.2)
+    OmniauthAccessGate (0.1.5)
       omniauth-oauth2
 
 GEM
