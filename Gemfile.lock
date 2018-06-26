@@ -13,8 +13,9 @@ GIT
     WordDescriptor (1.0.1)
       httparty
 
-PATH
-  remote: /Users/zachnusbaum/Rails/OmniauthAccessGate
+GIT
+  remote: https://github.com/zdann120/csid-gate.git
+  revision: cc9339c49ce7f300c03ca93948769f9ab2c25ffb
   specs:
     OmniauthAccessGate (0.1.5)
       omniauth-oauth2
