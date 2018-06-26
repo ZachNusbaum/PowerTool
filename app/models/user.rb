@@ -49,7 +49,7 @@ class User < ApplicationRecord
   devise :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable,
-         omniauth_providers: %i[github facebook twitter google_oauth2 spotify]
+         omniauth_providers: %i[github facebook twitter google_oauth2 spotify access_gate]
   enum role: [:basic, :admin]
 
   has_many :bookmarks, class_name: 'News::Bookmark'

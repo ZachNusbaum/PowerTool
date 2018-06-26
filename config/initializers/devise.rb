@@ -283,6 +283,8 @@ Devise.setup do |config|
     Rails.application.credentials.spotify_secret,
     scope: 'playlist-read-private user-read-private user-read-email user-top-read user-read-recently-played user-read-birthdate user-follow-read streaming user-read-currently-playing user-read-playback-state'
 
+    config.omniauth :access_gate, Rails.application.credentials.access_gate_key, Rails.application.credentials.access_gate_secret
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

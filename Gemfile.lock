@@ -13,6 +13,12 @@ GIT
     WordDescriptor (1.0.1)
       httparty
 
+PATH
+  remote: /Users/zachnusbaum/Rails/OmniauthAccessGate
+  specs:
+    OmniauthAccessGate (0.1.2)
+      omniauth-oauth2
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -584,6 +590,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  OmniauthAccessGate!
   PostDmarc!
   WordDescriptor!
   active_interaction (~> 3.6)
@@ -666,4 +673,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

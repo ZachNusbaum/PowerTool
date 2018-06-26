@@ -107,3 +107,4 @@ gem 'chunky_png'
 gem 'rqrcode'
 gem 'rails-erd'
 gem 'notifications', '~> 0.6.0'
+gem "OmniauthAccessGate", path: "/Users/zachnusbaum/Rails/OmniauthAccessGate"

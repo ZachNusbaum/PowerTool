@@ -26,9 +26,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_auth "Spotify"
   end
 
+  def access_gate
+    handle_auth "SDCCD CSID"
+  end
+
   private
 
   def handle_auth(kind)
+    pp request.env['omniauth.auth']
     if service.present?
       service.update(service_attrs)
     else
@@ -53,6 +58,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def set_user
+    @email = auth.info.email
     if user_signed_in?
       @user = current_user
     elsif service.present?
