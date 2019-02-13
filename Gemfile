@@ -98,7 +98,7 @@ gem "flutie", "~> 2.0"
 gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'
 gem "sentry-raven", "~> 2.7"
 gem 'omniauth-spotify', "~> 0.0"
-gem "rspotify", "~> 2.1"
+gem "rspotify", "~> 2.4"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
 gem 'google-api-client', '~> 0.22', require: 'google/apis'
 gem 'attr_encrypted', '~> 3.0'
