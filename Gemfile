@@ -93,7 +93,7 @@ gem "kaminari", "~> 1.1"
 gem "pundit", "~> 1.1"
 gem "octokit", "~> 4.9"
 gem "koala", "~> 3.0"
-gem "doorkeeper", "~> 4.3"
+gem "doorkeeper", "~> 5.0"
 gem "flutie", "~> 2.0"
 gem "WordDescriptor", github: 'ZachNusbaum/word_descriptor'
 gem "sentry-raven", "~> 2.7"
