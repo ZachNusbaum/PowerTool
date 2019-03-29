@@ -100,7 +100,7 @@ gem "sentry-raven", "~> 2.7"
 gem 'omniauth-spotify', "~> 0.0"
 gem "rspotify", "~> 2.1"
 gem "PostDmarc", github: 'ZachNusbaum/PostDmarc'
-gem 'google-api-client', '~> 0.22', require: 'google/apis'
+gem 'google-api-client', '~> 0.28', require: 'google/apis'
 gem 'attr_encrypted', '~> 3.0'
 gem 'devise-two-factor'
 gem 'chunky_png'
