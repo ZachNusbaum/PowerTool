@@ -97,8 +97,8 @@ GEM
       request_store
       safely_block (>= 0.2.1)
       user_agent_parser
-    annotate (2.7.3)
-      activerecord (>= 3.2, < 6.0)
+    annotate (2.7.5)
+      activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 13.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
