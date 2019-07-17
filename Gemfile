@@ -87,7 +87,7 @@ gem "premailer-rails", "~> 1.10"
 gem "receipts", "~> 0.2"
 #gem 'gdpr_rails'
 gem "aws-sdk-s3", "~> 1.13", require: false
-gem "mini_magick", "~> 4.8"
+gem "mini_magick", "~> 4.9"
 gem 'semantic-ui-sass', "~> 2.3"
 gem "kaminari", "~> 1.1"
 gem "pundit", "~> 1.1"
