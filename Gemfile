@@ -30,7 +30,7 @@ gem "bcrypt"
 gem "awesome_print", "~> 1.8"
 gem "rotp", "~> 3.3"
 gem "active_interaction", "~> 3.6"
-gem "devise", "~> 4.6"
+gem "devise", "~> 4.7"
 gem "money-rails", "~> 1.11"
 
 # Env specific dependencies...
