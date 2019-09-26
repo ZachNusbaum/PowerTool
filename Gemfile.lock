@@ -574,7 +574,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
-    uglifier (4.1.10)
+    uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -670,7 +670,7 @@ DEPENDENCIES
   spring-commands-rspec (~> 1.0)
   spring-watcher-listen (~> 2.0)
   stripe (~> 3.15)
-  uglifier (~> 4.1)
+  uglifier (~> 4.2)
 
 RUBY VERSION
    ruby 2.5.1p57
