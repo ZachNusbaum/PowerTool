@@ -21,7 +21,7 @@ gem "bootstrap-sass", "~> 3.3"
 gem "coffee-rails", "~> 4.2"
 gem "jquery-rails", "~> 4.3"
 gem "sass-rails", "~> 5.0" # Only needed for generator (e.g. rail g controller Users)
-gem "simple_form", "~> 4.0"
+gem "simple_form", "~> 5.0"
 gem "slim-rails", "~> 3.1"
 gem "uglifier", "~> 4.1"
 gem "bcrypt"
