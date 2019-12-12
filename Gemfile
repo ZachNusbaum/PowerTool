@@ -36,7 +36,7 @@ gem "money-rails", "~> 1.11"
 # Env specific dependencies...
 
 group :production, :acceptance do
-  gem "rack-timeout", "~> 0.5"
+  gem "rack-timeout", "~> 0.6"
 end
 
 group :development, :test do
