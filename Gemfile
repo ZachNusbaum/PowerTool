@@ -70,7 +70,7 @@ group :test do
 end
 
 gem "sidekiq", "~> 5.1"
-gem "sidekiq-scheduler", "~> 2.2"
+gem "sidekiq-scheduler", "~> 3.0"
 gem "activeadmin", "~> 1.3"
 
 gem "omniauth", "~> 1.8"
