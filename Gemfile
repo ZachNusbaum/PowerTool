@@ -50,7 +50,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "annotate", "~> 2.7"
+  gem "annotate", "~> 3.1"
   gem "dotenv-rails", "~> 2.4"
   gem "launchy", "~> 2.4"
   gem "listen", "~> 3.1"
