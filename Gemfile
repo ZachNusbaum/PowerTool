@@ -73,7 +73,7 @@ gem "sidekiq", "~> 5.1"
 gem "sidekiq-scheduler", "~> 2.2"
 gem "activeadmin", "~> 1.3"
 
-gem "omniauth", "~> 1.8"
+gem "omniauth", "~> 1.9"
 gem "omniauth-github", "~> 1.1"
 gem "omniauth-facebook", "~> 5.0"
 gem "omniauth-twitter", "~> 1.4"
