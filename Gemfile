@@ -7,7 +7,7 @@ ruby "2.5.1"
 # Back-endy
 gem "bootsnap", "~> 1.3", require: false
 gem "pg", "~> 1.0"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rack-canonical-host", "~> 0.2"
 gem "rails", "~> 5.2"
 gem "pry-rails", "~> 0.3"
