@@ -89,7 +89,7 @@ gem "receipts", "~> 0.2"
 gem "aws-sdk-s3", "~> 1.13", require: false
 gem "mini_magick", "~> 4.8"
 gem 'semantic-ui-sass', "~> 2.3"
-gem "kaminari", "~> 1.1"
+gem "kaminari", "~> 1.2"
 gem "pundit", "~> 1.1"
 gem "octokit", "~> 4.9"
 gem "koala", "~> 3.0"
