@@ -16,7 +16,7 @@ gem "faraday", "~> 0.12"
 gem "faraday_middleware", "~> 0.12"
 
 # Front-endy
-gem "autoprefixer-rails", "~> 8.5"
+gem "autoprefixer-rails", "~> 10.1"
 gem "bootstrap-sass", "~> 3.3"
 gem "coffee-rails", "~> 4.2"
 gem "jquery-rails", "~> 4.3"
