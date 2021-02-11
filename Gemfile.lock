@@ -217,7 +217,7 @@ GEM
     fugit (1.1.1)
       et-orbi (~> 1.1, >= 1.1.1)
       raabro (~> 1.1)
-    geocoder (1.4.9)
+    geocoder (1.6.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     google-api-client (0.22.0)
