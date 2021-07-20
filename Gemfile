@@ -19,7 +19,7 @@ gem "faraday_middleware", "~> 0.12"
 gem "autoprefixer-rails", "~> 8.5"
 gem "bootstrap-sass", "~> 3.3"
 gem "coffee-rails", "~> 4.2"
-gem "jquery-rails", "~> 4.3"
+gem "jquery-rails", "~> 4.4"
 gem "sass-rails", "~> 5.0" # Only needed for generator (e.g. rail g controller Users)
 gem "simple_form", "~> 4.0"
 gem "slim-rails", "~> 3.1"
