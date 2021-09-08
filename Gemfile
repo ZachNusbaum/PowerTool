@@ -41,7 +41,7 @@ end
 
 group :development, :test do
   gem "factory_bot_rails", "~> 4.10"
-  gem "better_errors", "~> 2.4"
+  gem "better_errors", "~> 2.9"
   gem "binding_of_caller", "~> 0.8"
   gem "rspec-rails", "~> 3.7"
   gem "rspec_junit_formatter", "~> 0.4"
