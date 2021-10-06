@@ -69,7 +69,7 @@ group :test do
   gem "simplecov", "~> 0.16"
 end
 
-gem "sidekiq", "~> 5.1"
+gem "sidekiq", "~> 5.2"
 gem "sidekiq-scheduler", "~> 2.2"
 gem "activeadmin", "~> 1.3"
 
